@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utfprhub</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="LoginTela1.css">
+</head>
+
+<body class="text-center">
+
+  <main class="form-signin">
+    <form>
+      <img class="mb-4" src="images/CB LOGO.png" alt="Utfpr_hub" style="margin-left: -12px;" width="169" height="169" >  
+      <h1 class="h3 mb-3 fw-normal" style="color:#FFFFFFff; font-weight: bold;">Portal de Concursos</h1>
+
+      <div class="form-floating">
+        <input type="email" class="form-control" id="floatingInput" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" placeholder="name@example.com">
+        <label for="floatingInput" style="color:#1B1B1Bff;">Endereço de Email</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPasswordo" placeholder="Password">
+        <label for="floatingPassword" style="color:#1B1B1Bff;">Senha</label>
+      </div>
+
+      <button class="w-100 btn btn-lg btn-dark" type="submit"
+        style="background-color: #1B1B1Bff; color:#FFFFFFff; font-weight: bold;" onclick="valForm()">Entrar</button>
+      <p class="mt-5 mb-3 text-muted">&copy; Powered by Madeireira CB 2021 </p>
+    </form>
+  </main>
+
+  <script>
+    function valForm() {
+
+      if ((document.getElementById('floatingInput').value == "snipes.wesley@gmail.com") && (document.getElementById('floatingPasswordo').value == "geladeira123")) {
+        location.href = "DESEG/homepage.html";
+        return false;
+      }
+      if ((document.getElementById('floatingInput').value == "daroncowhey@gmail.com") && (document.getElementById('floatingPasswordo').value == "tresdedoze150kg")) {
+        location.href = "FUNCIONARIO/homepage.html";
+        return false;
+      }
+      if ((document.getElementById('floatingInput').value == "neymar@alunos.utfpr.edu.br") && (document.getElementById('floatingPasswordo').value == "marquezine69")) {
+        location.href = "ALUNO/Notificacoes.html";
+        return false;
+      }
+      
+    }
+  </script>
+
+</body>
+
+</html>
