@@ -1,4 +1,5 @@
-//Teste e Exemplo da aula que o professor passou para usarmos depois.
+const usuario = require('./usuario');
+//usuario.sync({force:true});   //Deixa comentado isso, se não via resetar a tabela no banco.
 
-//const pessoa = require('./pessoa');
-//pessoa.sync({force:true});
+usuario.create({username:"Neymar",
+senha: "ousadia"})
