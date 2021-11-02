@@ -3,7 +3,7 @@ const routes = require('./routers/route');
 const mongoose = require('mongoose');
 const handlebars = require('express-handlebars');
 const express = require('express');
-const empresa = require('./models/models_nosql/empresa');
+const concurso = require('./models/models_nosql/concurso');
 const app = express();
 
 app.engine('handlebars', handlebars ({defaultLayout:'main'}));
