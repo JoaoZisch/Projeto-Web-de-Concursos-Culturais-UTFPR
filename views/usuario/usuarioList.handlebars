@@ -1,0 +1,16 @@
+<table border="1px">
+    <tr>
+        <td> Login </td>
+        <td> Senha</td>
+        <td> Pergunta Secreta</td>
+        <td> Resposta Secreta</td>
+    </tr>
+    {{#each usuarios}}
+    <tr>
+        <td>{{login}}</td>
+        <td>{{senha}}</td>
+        <td>{{pergunta_secreta}}</td>
+        <td>{{resposta_pergunta}}</td>
+    </tr>
+    {{/each}}
+</table>
