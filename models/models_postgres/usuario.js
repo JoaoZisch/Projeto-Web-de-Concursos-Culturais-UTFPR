@@ -16,6 +16,9 @@ module.exports = (sequelize, Sequelize) => {
         },
         resposta_pergunta: {
             type: Sequelize.STRING, allowNull: false
+        },
+        flagadm: {
+            type: Sequelize.BOOLEAN, allowNull: true
         }
     });
     return Usuario;
