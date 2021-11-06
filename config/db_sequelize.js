@@ -9,5 +9,6 @@ var db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 db.Usuario = require('../models/models_postgres/usuario.js')(sequelize, Sequelize);
+db.Concurso = require('../models/models_postgres/concurso.js')(sequelize, Sequelize);
 module.exports = db;
 
