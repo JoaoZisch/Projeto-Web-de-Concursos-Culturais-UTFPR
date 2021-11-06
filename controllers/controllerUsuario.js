@@ -13,11 +13,16 @@ module.exports = {
     async getLogin(req,res){
         res.render('usuario/login',{layout: 'noMenu.handlebars'});
     },
+    async getLogout(req,res){
+        req.session.destroy();
+        res.redirect('/');
+    },
     async postLogin(req,res){
         db.Usuario.findAll({ where: {login: req.body.login, senha: req.body.senha}}
         ). then (usuarios => {
             if (usuarios.length > 0){
-                res.render('home');
+                req.session.login = req.body.login;
+                res.redirect('/home');
             }
             else
                 res.redirect('/');

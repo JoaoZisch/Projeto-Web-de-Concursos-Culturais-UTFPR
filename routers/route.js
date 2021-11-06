@@ -5,12 +5,18 @@ const route = express.Router();
 
 module.exports = route;
 
-//Home
-    route.get("/home",function(req,res){res.render('home')});
-    
+route.get("/home",function(req,res){
+    if(req.session.login){
+        console.log(req.session.login);
+        res.render('home');
+    }
+    else
+        res.redirect('/');
+});
 //Controller Usuario
     //Usuario - Login e Recuperação de Senha
     route.get("/",controllerUsuario.getLogin);
+    route.get("/logout",controllerUsuario.getLogout);
     route.post("/login",controllerUsuario.postLogin);
     route.get("/recuperarSenha/:login",controllerUsuario.getRecuperarSenha);
     route.post("/recuperarSenha",controllerUsuario.postRecuperarSenha);
