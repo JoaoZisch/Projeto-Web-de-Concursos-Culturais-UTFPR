@@ -1,19 +1,22 @@
-const Concurso = require('../models/models_nosql/concurso');
+const Sequelize = require('sequelize');
+const db = require('../config/db_sequelize');
+const Concurso = require('../models/models_postgres/concurso');
+const path = require('path');
 
 module.exports = {
     async getCreate(req, res) {
         res.render('concurso/concursoCreate');
     },
-        async postCreate(req, res) {
-            const {nome, descricao} = req.body;
-            const concurso = new Concurso({nome, descricao});
-            await concurso.save();
-            res.redirect('/home');
-
+    async postCreate(req, res) {
+        db.Concurso.create({
+            nome:req.body.nome,
+            descricao:req.body.descricao,
+            });
+        res.redirect('/home');
     },
     async getList(req, res) {
-        Concurso.find().then((concursos) => {
+        db.Concurso.findAll().then (concursos => {
             res.render('concurso/concursoList', { concursos: concursos.map(concursos => concursos.toJSON())});
         });
     }
-}
+}   
