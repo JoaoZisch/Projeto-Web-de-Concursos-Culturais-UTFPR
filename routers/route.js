@@ -1,6 +1,7 @@
 const express = require('express');
 const controllerUsuario = require('../controllers/controllerUsuario');
 const controllerConcurso = require('../controllers/controllerConcurso');
+const controllerParticipacao = require('../controllers/controllerParticipacao');
 const route = express.Router();
 
 module.exports = route;
@@ -26,7 +27,12 @@ route.get("/home",function(req,res){
     route.get("/usuarioList",controllerUsuario.getList);
 
 //Controller concurso
-    //concurso-CRUD
+    //concurso - CRUD
     route.get("/concursoCreate",controllerConcurso.getCreate);
     route.post("/concursoCreate",controllerConcurso.postCreate);
     route.get("/concursoList",controllerConcurso.getList);
+//Controller participacao
+    //participacao - CRUD
+    route.get("/participacaoCreate",controllerParticipacao.getCreate);
+    route.post("/participacaoCreate",controllerParticipacao.postCreate);
+    route.get("/participacaoList",controllerParticipacao.getList);

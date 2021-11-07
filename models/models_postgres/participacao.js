@@ -7,10 +7,10 @@ module.exports = (sequelize, Sequelize) => {
         autoIncrement: true, allowNull: false, primaryKey: true
         },
         descricao: {
-        type: Sequelize.STRING, allowNull: false
+        type: Sequelize.STRING, allowNull: true
         },
         qtdVotos: {
-            type: Sequelize.INTEGER, allowNull: false
+            type: Sequelize.INTEGER, allowNull: true
         }
 
     });
