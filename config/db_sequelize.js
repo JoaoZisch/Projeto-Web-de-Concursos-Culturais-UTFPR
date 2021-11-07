@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const concurso = require('../models/models_postgres/concurso.js');
 const participacao = require('../models/models_postgres/participacao.js');
 //const sequelize = new Sequelize('database', 'username', 'password', {
-const sequelize = new Sequelize('web2_db', 'postgres', '91323054', {
+const sequelize = new Sequelize('web2_db', 'postgres', 'POSTGRES', {
     host: 'localhost',
     dialect: 'postgres'
   });
