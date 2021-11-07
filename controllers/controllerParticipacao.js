@@ -6,7 +6,7 @@ const path = require('path');
 module.exports = {
     
     async getCreate(req, res) {
-        res.render('participacao/participacaoCreate');
+        res.render('participacao/participacaoCreate',{layout: 'noMenu.handlebars'});
     },
     async postCreate(req, res) {
         db.participacao.create({
