@@ -12,6 +12,7 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 db.Usuario = require('../models/models_postgres/usuario.js')(sequelize, Sequelize);
 db.Concurso = require('../models/models_postgres/concurso.js')(sequelize, Sequelize); 
+db.participacao = require('../models/models_postgres/participacao.js')(sequelize, Sequelize);
 //db.Concurso.belongsToMany(db.Usuario, { through: db.Participacao });
 module.exports = db;
 

@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const db = require('../config/db_sequelize');
-const Usuario = require('../models/models_postgres/Participacao');
+const Participacao = require('../models/models_postgres/Participacao');
 const path = require('path');
 
 module.exports = {
