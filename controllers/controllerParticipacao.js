@@ -11,7 +11,6 @@ module.exports = {
     async postCreate(req, res) {
         db.Participacao.create({
             descricao:req.body.descricao,
-            flagadm:req.body.flagadm
             });
         res.redirect('participacao/participacaoList');
     },
