@@ -1,6 +1,6 @@
 
 module.exports = (sequelize, Sequelize) => {   
-    //AINDA NECESSARIO DEFINIR RELACIONAMENTO COM MODEL USUARIO
+    
     const Participacao = sequelize.define('participacao', {
         id: {
         type: Sequelize.INTEGER,
@@ -12,6 +12,7 @@ module.exports = (sequelize, Sequelize) => {
         qtdVotos: {
             type: Sequelize.INTEGER, allowNull: false
         }
+
     });
     return Participacao;
 }

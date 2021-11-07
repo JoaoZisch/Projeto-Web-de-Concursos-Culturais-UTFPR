@@ -4,11 +4,12 @@ const Usuario = require('../models/models_postgres/Usuario');
 const path = require('path');
 
 //deixar comentado, esse codigo reseta o banco de dados.
-  /*
+ /*
 db.sequelize.sync({force: true}).then(() => {
     console.log('{ force: true }');
 });
 */
+
 module.exports = {
     async getLogin(req,res){
         res.render('usuario/login',{layout: 'noMenu.handlebars'});
