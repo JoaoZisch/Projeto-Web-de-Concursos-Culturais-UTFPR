@@ -9,7 +9,11 @@ module.exports = route;
 route.get("/home",function(req,res){
     if(req.session.login){
         console.log(req.session.login);
-        res.render('home');
+        if(req.session.isadm == 1)
+        //res.render('home');
+        res.render('home', {layout: 'main.handlebars'});
+        else
+        res.render('home', {layout: 'mainUserNormal.handlebars'});
     }
     else
         res.redirect('/');
@@ -31,6 +35,7 @@ route.get("/home",function(req,res){
     route.get("/concursoCreate",controllerConcurso.getCreate);
     route.post("/concursoCreate",controllerConcurso.postCreate);
     route.get("/concursoList",controllerConcurso.getList);
+    route.get("/concursoListUP",controllerConcurso.getListUP);
 //Controller participacao
     //participacao - CRUD
     route.get("/participacaoCreate",controllerParticipacao.getCreate);

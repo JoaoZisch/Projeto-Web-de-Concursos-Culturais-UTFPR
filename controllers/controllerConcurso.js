@@ -18,5 +18,10 @@ module.exports = {
         db.Concurso.findAll().then (concursos => {
             res.render('concurso/concursoList', { concursos: concursos.map(concursos => concursos.toJSON())});
         });
+    },
+    async getListUP(req, res) {
+        db.Concurso.findAll().then (concursos => {
+            res.render('concurso/concursoList',{layout: 'mainUserNormal.handlebars',concursos: concursos.map(concursos => concursos.toJSON())}); 
+        });
     }
 }   
