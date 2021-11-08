@@ -1,19 +1,25 @@
 <!DOCTYPE html>
-<html>  
+<html style="background-color: chocolate">  
     <head>
         <title>Concursos da Firma</title>
+        <link rel="stylesheet" href="layouts.css">
     </head>
     <body>
-        <center> 
+        <div style="float: left; width:20%; backgroud-color:rgb(238, 238, 238);text-align:center">
             <h1> Concursos da Firma </h1>
+        </div>
+        <br> <br>
+        <div style="float:left; width:75%; margin-left: 15px;">
             <a href="usuarioCreate"> <button> Cadastrar Usuário</button> </a> 
             <a href="usuarioList"> <button> Listar Usuários</button> </a>
             <a href="concursoCreate"> <button> Cadastrar Concursos</button> </a> 
-            <a href="concursoList"> <button style="background-color: blueviolet;"> Listar Concursos</button> </a>
+            <a href="concursoList"> <button> Listar Concursos</button> </a>   
             <a href="logout"> <button> Logout</button> </a>
-            <br>
-            <br>
+        </div>
+        <br><br><br>
+        <div style="float:left; width:20%; margin-left: 15px;">
             {{{body}}}
-        </center>
+        </div>
+        
     </body>
 </html>
