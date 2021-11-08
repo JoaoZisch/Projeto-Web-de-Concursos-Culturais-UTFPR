@@ -22,8 +22,19 @@ module.exports = {
         db.Usuario.findAll({ where: {login: req.body.login, senha: req.body.senha}}
         ). then (usuarios => {
             if (usuarios.length > 0){
-                req.session.login = req.body.login;
+                if(usuarios[0].flagadm == 1){
+                    req.session.login = req.body.login
+                    req.session.isadm = usuarios[0].flagadm
+                    //res.render('concurso/concursoList', {layout: 'main.handlebars'});
+                    res.redirect('/home');
+                }
+                else{
+                req.session.login = req.body.login
+                req.session.isadm = usuarios[0].flagadm
+                //res.render('concurso/concursoList', {layout: 'mainUserNormal.handlebars'});
                 res.redirect('/home');
+            }
+
             }
             else
                 res.redirect('/');

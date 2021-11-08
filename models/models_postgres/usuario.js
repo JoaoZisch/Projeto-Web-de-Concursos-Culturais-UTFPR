@@ -18,7 +18,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING, allowNull: false
         },
         flagadm: {
-            type: Sequelize.BOOLEAN, allowNull: true
+            type: Sequelize.INTEGER, allowNull: true
         }
     });
     return Usuario;
