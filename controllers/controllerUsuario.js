@@ -10,6 +10,17 @@ db.sequelize.sync({force: true}).then(() => {
 });
 */
 
+/*
+//Cria user ADM Inicial
+db.Usuario.create({
+    login:'adm',
+    senha:'1',
+    pergunta_secreta:'1',
+    resposta_pergunta:'1',
+    flagadm:'1'
+    });
+*/
+
 module.exports = {
     async getLogin(req,res){
         res.render('usuario/login',{layout: 'noMenu.handlebars'});
