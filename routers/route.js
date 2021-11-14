@@ -42,9 +42,9 @@ route.get("/home",function(req,res){
     route.post("/participacaoCreate",controllerParticipacao.postCreate);
     route.get("/participacaoList",controllerParticipacao.getList);
 
-//InfoConcurso
+    //InfoConcurso
     route.get("/infoConcurso/:nome",controllerConcurso.getInfoPage);
     route.post("/infoConcurso",controllerConcurso.postCreate);
 
-//Divulgação dos Concursos
+    //Divulgação dos Concursos
     route.get("/divulgaPage",controllerDivulgacao.getCreate);
