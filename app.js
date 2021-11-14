@@ -6,6 +6,7 @@ const concurso = require('./models/models_postgres/concurso');
 const app = express();
 const unirest = require("unirest");
 const session = require('express-session');
+const middlewares = require('./middlewares/middlewares');
 const cookieParser = require('cookie-parser'); 
 app.use(cookieParser()); 
 app.use(session({secret:'textosecreto',saveUninitialized: true,cookie:{maxAge:30*60*1000}}))
@@ -16,7 +17,7 @@ app.set('view engine','handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
+app.use(middlewares.logRegister,middlewares.sessionControl)
 app.use(routes);
 
 
