@@ -1,0 +1,8 @@
+<h1> Pagina do Concurso</h1>
+
+
+<p> {{ concursoSelecionado.nome }}</p>
+        <form action="/participacaoCreate" method="get">  
+                <input type="text" name="nome" value={{concursoSelecionado.nome}}>
+                <input type="submit" value="Entrar">
+         </form>

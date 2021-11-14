@@ -2,6 +2,7 @@ const Sequelize = require('sequelize');
 const db = require('../config/db_sequelize');
 const Concurso = require('../models/models_postgres/concurso');
 const path = require('path');
+const { Console } = require('console');
 
 module.exports = {
     async getCreate(req, res) {
@@ -23,5 +24,22 @@ module.exports = {
         db.Concurso.findAll().then (concursos => {
             res.render('concurso/concursoList',{layout: 'mainUserNormal.handlebars',concursos: concursos.map(concursos => concursos.toJSON())}); 
         });
+    },
+
+    ////////////// Pagina de Info ////////////////
+
+    async getInfoPage(req, res){
+
+       
+        try {
+        const nome = req.params.nome
+        const concursoSelecionado = await db.Concurso.findOne( {raw: true, where:{nome: nome}})
+
+            res.render('concurso/infoConcurso', {layout: 'infoConcursosMenu.handlebars', concursoSelecionado}) 
+        } catch (error) {
+            console.log(error)
+        }
+
     }
+
 }   
