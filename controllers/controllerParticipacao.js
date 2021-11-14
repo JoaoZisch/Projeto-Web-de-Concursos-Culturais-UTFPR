@@ -6,16 +6,20 @@ const path = require('path');
 module.exports = {
     
     async getCreate(req, res) {
-        res.render('participacao/participacaoCreate',{layout: 'noMenu.handlebars'});
+        const dados = {
+            nome:req.body.nome
+        }
+        console.log(dados.nome)
+        res.render('participacao/participacaoCreate',{layout: 'infoConcursosMenu.handlebars', dados});
     },
     async postCreate(req, res) {
-        db.participacao.create({
+        db.Participacao.create({
             descricao:req.body.descricao,
             });
-        res.redirect('participacao/participacaoList');
+        res.render('participacao/participacaoList',{layout: 'infoConcursosMenu.handlebars'});
     },
     async getList(req, res) {
-        db.participacao.findAll().then (participacaos => {
+        db.Participacao.findAll().then (participacaos => {
             res.render('participacao/participacaoList', {participacaos: participacaos.map(participacaos => participacaos.toJSON())});
         });
     }

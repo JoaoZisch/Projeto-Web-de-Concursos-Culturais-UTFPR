@@ -35,9 +35,16 @@ route.get("/home",function(req,res){
     route.get("/concursoCreate",controllerConcurso.getCreate);
     route.post("/concursoCreate",controllerConcurso.postCreate);
     route.get("/concursoList",controllerConcurso.getList);
+
+//Controller Usuario Padrão (UP)
     route.get("/concursoListUP",controllerConcurso.getListUP);
+    
 //Controller participacao
     //participacao - CRUD
     route.get("/participacaoCreate",controllerParticipacao.getCreate);
     route.post("/participacaoCreate",controllerParticipacao.postCreate);
     route.get("/participacaoList",controllerParticipacao.getList);
+
+//InfoConcurso
+    route.get("/infoConcurso/:nome",controllerConcurso.getInfoPage);
+    route.post("/infoConcurso",controllerConcurso.postCreate);
