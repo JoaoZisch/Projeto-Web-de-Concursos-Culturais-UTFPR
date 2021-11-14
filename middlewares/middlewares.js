@@ -16,11 +16,19 @@ module.exports = {
             next();
         }
         else{
-            if(req.url != ('/usuarioCreate') || ('/usuarioList') || ('concursoCreate')) {
-                next();
-            }
-            else{ 
+            if(req.url == '/usuarioCreate') {
                 res.redirect('/concursoListUP');
+            }
+            else if(req.url == '/usuarioList'){
+                res.redirect('/concursoListUP');
+            }
+            else if(req.url == '/concursoCreate'){
+                res.redirect('/concursoListUP');
+            }
+            else if(req.url == '/concursoList'){
+                res.redirect('/concursoListUP');
+            }
+            else{             
                 next();
             }
         }
