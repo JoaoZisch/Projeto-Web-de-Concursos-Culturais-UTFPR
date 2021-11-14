@@ -14,9 +14,7 @@ db.Usuario = require('../models/models_postgres/usuario.js')(sequelize, Sequeliz
 db.Concurso = require('../models/models_postgres/concurso.js')(sequelize, Sequelize); 
 db.Participacao = require('../models/models_postgres/participacao.js')(sequelize, Sequelize);
 
-db.Participacao.belongsToMany(db.Concurso, { through: db.Participacao });
-db.Participacao.belongsToMany(db.Usuario, { through: db.Participacao });
-
+db.Usuario.belongsToMany(db.Concurso, { through: db.Participacao });
 
 module.exports = db;
 
