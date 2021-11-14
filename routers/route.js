@@ -7,16 +7,12 @@ const route = express.Router();
 module.exports = route;
 
 route.get("/home",function(req,res){
-    if(req.session.login){
-        console.log(req.session.login);
         if(req.session.isadm == 1)
-        //res.render('home');
         res.render('home', {layout: 'main.handlebars'});
         else
         res.render('home', {layout: 'mainUserNormal.handlebars'});
-    }
-    else
-        res.redirect('/');
+    
+
 });
 //Controller Usuario
     //Usuario - Login e Recuperação de Senha
