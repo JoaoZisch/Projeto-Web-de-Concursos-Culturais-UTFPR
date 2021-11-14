@@ -2,6 +2,7 @@ const Sequelize = require('sequelize');
 const db = require('../config/db_sequelize');
 const Usuario = require('../models/models_postgres/Usuario');
 const path = require('path');
+const { Console } = require('console');
 
 module.exports = {
     logRegister(req, res, next) {
@@ -39,4 +40,5 @@ module.exports = {
     else if ((req.url).split('/')[1] == 'recuperarSenha') next();
     else res.redirect('/');
     }
+
     };
