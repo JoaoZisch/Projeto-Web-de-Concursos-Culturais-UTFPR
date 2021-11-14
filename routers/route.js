@@ -2,6 +2,7 @@ const express = require('express');
 const controllerUsuario = require('../controllers/controllerUsuario');
 const controllerConcurso = require('../controllers/controllerConcurso');
 const controllerParticipacao = require('../controllers/controllerParticipacao');
+const controllerDivulgacao = require('../controllers/controllerDivulgacao');
 const route = express.Router();
 
 module.exports = route;
@@ -44,3 +45,6 @@ route.get("/home",function(req,res){
 //InfoConcurso
     route.get("/infoConcurso/:nome",controllerConcurso.getInfoPage);
     route.post("/infoConcurso",controllerConcurso.postCreate);
+
+//Divulgação dos Concursos
+    route.get("/divulgaPage",controllerDivulgacao.getCreate);
