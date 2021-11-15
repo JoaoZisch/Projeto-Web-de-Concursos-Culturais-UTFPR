@@ -8,7 +8,9 @@
     <tr>
         <td>{{nome}}</td>
         <td>{{descricao}}</td>
-        <td><a href="participacaoCreate"> Entrar</a></td>
+        <td><form action="/infoConcurso/{{nome}}" method="get">  
+            <input type="submit" value="Entrar">
+        </form></td>
     </tr>
     {{/each}}
 </table>
