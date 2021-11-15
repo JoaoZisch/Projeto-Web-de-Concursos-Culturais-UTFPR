@@ -1,3 +1,5 @@
+<a href="/concursoList"> Voltar </a>
+
 <h1> Pagina do Concurso</h1>
 
 
@@ -9,9 +11,9 @@
         <input type="text" name="concurso" value={{concursoSelecionado.nome}} hidden>  
         Descrição:  <input type="text" name="descricao">
         <br> <br> 
-        <input type="submit" value="Participar" onclick=funcao1()>
+        <input type="submit" value="Participar" onclick=msg()>
         <script>
-            function funcao1()
+            function msg()
             {
               alert("Participação Efetuada!")
             }
@@ -37,9 +39,9 @@
         <td>{{qtdVotos}}</td>
         <td><form action="/participacaoList/votar" method="post">  
         <input hidden type="integer" name="id" value={{id}} >
-        <input type="submit" value="Votar" onclick=funcao1()>
+        <input type="submit" value="Votar" onclick=msg()>
         <script>
-            function funcao1()
+            function msg()
             {
               alert("Voto computado! Obrigado pela participação")
             }

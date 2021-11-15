@@ -49,3 +49,5 @@ route.get("/home",function(req,res){
 
     //Divulgação dos Concursos
     route.get("/divulgaPage",controllerDivulgacao.getCreate);
+    route.get("/divulgaCreate",controllerDivulgacao.getDivulgaCreate);
+    route.post("/divulgaCreate",controllerDivulgacao.postDivulgaCreate);
