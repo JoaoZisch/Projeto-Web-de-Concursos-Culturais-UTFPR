@@ -41,10 +41,11 @@ route.get("/home",function(req,res){
     route.get("/participacaoCreate",controllerParticipacao.getCreate);
     route.post("/participacaoCreate",controllerParticipacao.postCreate);
     route.get("/participacaoList",controllerParticipacao.getList);
+    route.post("/participacaoList/votar",controllerParticipacao.postVotos);
 
     //InfoConcurso
     route.get("/infoConcurso/:nome",controllerConcurso.getInfoPage);
-    route.post("/infoConcurso",controllerConcurso.postCreate);
+    route.post("/infoConcurso/:nome",controllerConcurso.postCreate);
 
     //Divulgação dos Concursos
     route.get("/divulgaPage",controllerDivulgacao.getCreate);
