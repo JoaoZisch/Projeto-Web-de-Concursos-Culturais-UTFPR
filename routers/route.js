@@ -45,7 +45,7 @@ route.get("/home",function(req,res){
 
     //InfoConcurso
     route.get("/infoConcurso/:nome",controllerConcurso.getInfoPage);
-    route.post("/infoConcurso/:nome",controllerConcurso.postCreate);
+    //route.post("/infoConcurso/:nome",controllerConcurso.postCreate);
 
     //Divulgação dos Concursos
     route.get("/divulgaPage",controllerDivulgacao.getCreate);
