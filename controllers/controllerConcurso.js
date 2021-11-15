@@ -35,7 +35,10 @@ module.exports = {
         const nome = req.params.nome
         const concursoSelecionado = await db.Concurso.findOne( {raw: true, where:{nome: nome}})
 
-            res.render('concurso/infoConcurso', {layout: 'infoConcursosMenu.handlebars', concursoSelecionado}) 
+        const participacoesConcurso = await db.Participacao.findAll( {raw: true, where:{concursoId: concursoSelecionado.id}})
+
+            res.render('concurso/infoConcurso', {layout: 'infoConcursosMenu.handlebars', concursoSelecionado, participacoesConcurso}) 
+            
         } catch (error) {
             console.log(error)
         }

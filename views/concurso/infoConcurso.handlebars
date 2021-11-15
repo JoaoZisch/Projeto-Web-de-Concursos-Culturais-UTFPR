@@ -10,4 +10,29 @@
         Descrição:  <input type="text" name="descricao">
         <br> <br> 
         <input type="submit" value="Participar">
+
 </form>
+
+<br> <br>
+<br> <br>
+
+<table border="1px">
+    <tr>
+        <td> ID </td>
+        <td> Descricao</td>
+        <td> Qtd de Votos</td>
+        <td> Votar </td>
+        
+    </tr>
+    {{#each participacoesConcurso}}
+    <tr>
+        <td>{{id}}</td>
+        <td>{{descricao}}</td>
+        <td>{{qtdVotos}}</td>
+        <td><form action="/participacaoList/votar" method="post">  
+        <input hidden type="integer" name="id" value={{id}} >
+            <input type="submit" value="Votar">
+         </form></td>
+    </tr>
+    {{/each}}
+</table>
