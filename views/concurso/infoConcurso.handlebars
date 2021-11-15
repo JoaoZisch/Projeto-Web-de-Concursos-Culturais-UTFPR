@@ -2,8 +2,12 @@
 
 
 <p> {{ concursoSelecionado.nome }}</p>
-        <form action="/participacaoCreate" method="get">  
-                <h1> Pagina do Concurso</h1>
-                <input type="text" name="nome" value={{concursoSelecionado.nome}}>
-                <input type="submit" value="Entrar">
-         </form>
+
+
+<h2>Participar</h2>
+<form action="/participacaoCreate" method="post">
+        <input type="text" name="concurso" value={{concursoSelecionado.nome}} hidden>  
+        Descrição:  <input type="text" name="descricao">
+        <br> <br> 
+        <input type="submit" value="Participar">
+</form>
