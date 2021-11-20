@@ -1,17 +1,25 @@
-<table border="1px">
-    <tr>
-        <td> Nome </td>
-        <td> Descricao</td>
-        <td> Visualizar</td>
-    </tr>
-    {{#each concursos}}
-    <tr>
-        <td>{{nome}}</td>
-        <td>{{descricao}}</td>
-        <td><form action="/infoConcurso/{{nome}}" method="get">  
+
+
+<div class="container">
+
+{{#each concursos}}
+  <div class="card">
+    <div class="card__header">
+      <img src="https://source.unsplash.com/600x400/?computer" alt="card__image" class="card__image" width="600">
+    </div>
+    <div class="card__body">
+      <span class="tag tag-blue">{{nome}}</span>
+      <h4></h4>
+      <p>{{descricao}}</p>
+    </div>
+    <div class="card__footer">
+        <form action="/infoConcurso/{{nome}}" method="get">  
             <input type="submit" value="Entrar">
-         </form></td>
-      
-    </tr>
-    {{/each}}
-</table>
+         </form>
+    </div>
+  </div>
+
+{{/each}}
+
+</div>
+
