@@ -12,6 +12,8 @@ module.exports = {
         db.Concurso.create({
             nome:req.body.nome,
             descricao:req.body.descricao,
+            dtMaxPart: req.body.dtMaxPart,
+            dtFimConcurso: req.body.dtFimConcurso
             });
         res.redirect('/home');
     },

@@ -2,6 +2,54 @@
 <html>  
     <head>
         <title>Informações do Concurso</title>
+        <script type='text/javascript'>
+			this.onload = function disablePorData(){
+
+                var htmlItem = document.getElementById("btn")
+                var dtfim = document.getElementById("data").value
+
+                var dtfim = String(dtfim.slice(0,10)); 
+                var dd = String(dtfim.slice(8,10));
+                var mm = String(dtfim.slice(5,7));
+                var yyyy = String(dtfim.slice(0,4));
+                console.log(yyyy, mm, dd)
+
+                dtfim = new Date(yyyy,mm-1,dd);
+                console.log(dtfim)
+
+                var dtatual = new Date();
+
+                if(dtatual >= dtfim){
+                console.log("SIM")
+                htmlItem.disabled = true ;
+                }
+            
+        
+
+                var htmlItem = document.getElementsByName("btnVoto")
+                var dtfim = document.getElementById("dataFinal").value
+
+                var dtfim = String(dtfim.slice(0,10)); 
+                var dd = String(dtfim.slice(8,10));
+                var mm = String(dtfim.slice(5,7));
+                var yyyy = String(dtfim.slice(0,4));
+                console.log(yyyy, mm, dd)
+
+                dtfim = new Date(yyyy,mm-1,dd);
+                console.log(dtfim)
+
+                var dtatual = new Date();
+
+                
+                if(dtatual >= dtfim){
+                    for(var i = 0; i < htmlItem.length; i++){
+                    console.log("SIM");
+                    htmlItem[i].disabled = true ;
+                    }
+                }
+            
+            };
+		</script>
     </head>
     <body>
         <center>
@@ -9,5 +57,6 @@
             <br>
             {{{body}}}
         </center>
+        
     </body>
 </html>

@@ -2,6 +2,41 @@
 <html>  
     <head>
         <title>Concursos da Firma</title>
+        <script>
+            this.onpointermove = function disablePorValidacao(){
+                        var htmlItem = document.getElementById("btnCadastroConcurso");
+                        var dtMaxPart = document.getElementById("dtMaxPart").value;
+                        var dtFimConcurso = document.getElementById("dtFimConcurso").value;
+
+                        var dtMaxPart = String(dtMaxPart.slice(0,10)); 
+                        var dd = String(dtMaxPart.slice(8,10));
+                        var mm = String(dtMaxPart.slice(5,7));
+                        var yyyy = String(dtMaxPart.slice(0,4));
+                        console.log(yyyy, mm, dd)
+
+                        dtMaxPart = new Date(yyyy,mm-1,dd);
+                                          
+                        var dtFimConcurso = String(dtFimConcurso.slice(0,10)); 
+                        var dd = String(dtFimConcurso.slice(8,10));
+                        var mm = String(dtFimConcurso.slice(5,7));
+                        var yyyy = String(dtFimConcurso.slice(0,4));
+                        console.log(yyyy, mm, dd)
+
+                        dtFimConcurso = new Date(yyyy,mm-1,dd);
+                                                
+                        if(dtMaxPart > dtFimConcurso){
+                                htmlItem.disabled = true ;
+                                msgValidacao.hidden = false;
+                        }
+                        else{
+                                htmlItem.disabled = false ;
+                                msgValidacao.hidden = true;    
+                        }
+                        
+                    };
+
+
+        </script>
     </head>
     <body>
         <center> 

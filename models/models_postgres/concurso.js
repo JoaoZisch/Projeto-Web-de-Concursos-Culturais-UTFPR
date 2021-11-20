@@ -8,8 +8,14 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING, allowNull: false
         },
         descricao: {
-        type: Sequelize.STRING, allowNull: false
+            type: Sequelize.STRING, allowNull: false
         },
+        dtMaxPart : {
+            type: Sequelize.DATEONLY, allowNull: false
+        },     
+        dtFimConcurso: {
+            type: Sequelize.DATEONLY, allowNull: false
+        }
     });
     return Concurso;
 }

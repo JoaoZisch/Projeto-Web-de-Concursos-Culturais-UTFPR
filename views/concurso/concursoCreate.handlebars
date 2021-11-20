@@ -4,5 +4,16 @@
             <br> <br>
             Descrição:  <input type="text" name="descricao">
             <br> <br> 
-            <input type="submit" value="Cadastrar">
+            Data maxima para novas participações :  <input type="date" id="dtMaxPart" name="dtMaxPart">
+            <br> <br> 
+            Data de encerramento do concurso  <input type="date" id="dtFimConcurso" name="dtFimConcurso">
+            <br> <br> 
+            <input type="submit" id="btnCadastroConcurso" value="Cadastrar" onclick=msg()>
+            <p id="msgValidacao" style="color: red;" hidden > A data de encerramento deve ser maior que data maxima de participação! </p>
+            <script>
+                function msg()
+                {
+                alert("Concurso cadastrado com sucesso!");
+                }
+            </script>
          </form>

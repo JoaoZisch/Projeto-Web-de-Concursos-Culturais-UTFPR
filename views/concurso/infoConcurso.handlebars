@@ -1,17 +1,20 @@
 <a href="/concursoList"> Voltar </a>
 
 <h1> Pagina do Concurso</h1>
-
-
 <p> {{ concursoSelecionado.nome }}</p>
 
+Incrições até: <p> {{ concursoSelecionado.dtMaxPart }}</p>
+Votação ocorre até: <p> {{ concursoSelecionado.dtFimConcurso }}</p>
+<br> <br> 
 
 <h2>Participar</h2>
 <form action="/participacaoCreate" method="post">
         <input type="text" name="concurso" value={{concursoSelecionado.nome}} hidden>  
+        <input type="text" id="data" name="concurso" value={{concursoSelecionado.dtMaxPart}} hidden >  
+        <input type="text" id="dataFinal" name="concurso" value={{concursoSelecionado.dtFimConcurso}} hidden >  
         Descrição:  <input type="text" name="descricao">
         <br> <br> 
-        <input type="submit" value="Participar" onclick=msg()>
+        <input type="submit" id="btn" value="Participar" onclick=msg() >
         <script>
             function msg()
             {
@@ -39,7 +42,7 @@
         <td>{{qtdVotos}}</td>
         <td><form action="/participacaoList/votar" method="post">  
         <input hidden type="integer" name="id" value={{id}} >
-        <input type="submit" value="Votar" onclick=msg()>
+        <input type="submit" name="btnVoto" value="Votar" onclick=msg()>
         <script>
             function msg()
             {

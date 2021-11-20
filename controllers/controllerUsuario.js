@@ -2,6 +2,7 @@ const Sequelize = require('sequelize');
 const db = require('../config/db_sequelize');
 const Usuario = require('../models/models_postgres/Usuario');
 const path = require('path');
+const { Console } = require('console');
 
 //deixar comentado, esse codigo reseta o banco de dados.
  /*
@@ -71,7 +72,19 @@ module.exports = {
             }
         });
     },
-    async getCreate(req, res) {
+    async getCreate(req, res) {   
+
+        var dtini = '2021-11-14 rgtete'
+        dtini = String(dtini.slice(0,10)); 
+        var dd = String(dtini.slice(8,10));
+        var mm = String(dtini.slice(5,7));
+        var yyyy = String(dtini.slice(0,4));
+        console.log("ney")
+        console.log(yyyy, mm, dd)
+
+        var today = new Date(yyyy,mm-1,dd);
+        console.log(today)
+
         res.render('usuario/usuarioCreate');
     },
     async postCreate(req, res) {
