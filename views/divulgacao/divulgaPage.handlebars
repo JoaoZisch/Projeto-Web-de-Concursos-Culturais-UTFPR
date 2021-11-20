@@ -1,17 +1,16 @@
 <h1> Pagina de Divulgação dos Concursos</h1>
 
-
-<table border="1px">
-    <tr>
-        <td> Titulo </td>
-        <td> Conteudo</td>
-    </tr>
-    {{#each divulgacaos}}
-    <tr>
-        <td>{{titulo}}</td>
-        <td>{{texto}}</td>
-    </td>
-      
-    </tr>
-    {{/each}}
-</table>
+<div class="container">
+{{#each divulgacaos}}
+  <div class="card">
+    <div class="card__header">
+      <img src="https://source.unsplash.com/600x400/?computer" alt="card__image" class="card__image" width="600">
+    </div>
+    <div class="card__body">
+      <h4>{{titulo}}</h4>
+      <p>{{texto}}</p>
+    </div>
+    <div class="card__footer"></div>
+  </div>
+{{/each}}
+</div>
