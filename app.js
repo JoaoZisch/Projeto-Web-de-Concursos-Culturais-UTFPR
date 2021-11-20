@@ -14,6 +14,8 @@ app.use(session({secret:'textosecreto',saveUninitialized: true,cookie:{maxAge:30
 app.engine('handlebars', handlebars ({defaultLayout:'main'}));
 app.set('view engine','handlebars');
 
+app.use(express.static('public'));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
