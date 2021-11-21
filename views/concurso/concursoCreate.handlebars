@@ -8,6 +8,11 @@
             <br> <br> 
             Data de encerramento do concurso  <input type="date" id="dtFimConcurso" name="dtFimConcurso">
             <br> <br> 
+            <label for="tipoMidia">Tipo de midia que deve ser enviado pelo participante:</label>
+            <select id="tipoMidia" name="tipoMidia">
+                <option value="imagem">Imagem</option>
+                <option value="videoAudio">Video ou Audio</option>
+            </select>
             <input type="submit" id="btnCadastroConcurso" value="Cadastrar" onclick=msg()>
             <p id="msgValidacao" style="color: red;" hidden > A data de encerramento deve ser maior que data maxima de participação! </p>
             <script>
