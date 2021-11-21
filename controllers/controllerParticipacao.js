@@ -21,8 +21,6 @@ module.exports = {
         const concurso = req.body.concurso
         const userLogado = await db.Usuario.findOne( {raw: true, where:{login: login}})
         const concursoSelecionado = await db.Concurso.findOne( {raw: true, where:{nome: concurso}})
-        //var qtdPart = await db.Participacao.count( {raw: true, where:{idConcurso: concursoSelecionado.id}})
-        //qtdPart + 1;
 
         try {
             db.Participacao.create({
@@ -31,7 +29,6 @@ module.exports = {
                 descricao: req.body.descricao,
                 qtdVotos: 0,
                 imagem: req.imageName
-                //imagem: req.imageName+qtdPart+'.jpg'
                 
                 });
             res.redirect('/home')

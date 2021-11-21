@@ -20,38 +20,68 @@ route.get("/home",function(req,res){
 });
 
 
-const storage = multer.diskStorage({
+const storageB = multer.diskStorage({
     destination: (req, file, cb) => {
     cb(null, "public/uploads/")
     },
     filename: async (req, file, cb) =>  {
-    idConcurso = req.body.id
-    var qtdPart = await db.Participacao.count()
-    console.log(qtdPart)
-    if(qtdPart >= 1){
+  
+        idConcurso = req.body.id
+        if(req.body.tipoMidia !== 'texto'){
+            var qtdPart = await db.Participacao.count()
+            console.log(qtdPart)
+            if(qtdPart >= 1){
+                console.log("prima")
+                qtdPart = qtdPart + 1;
+            }else if(qtdPart < 1){
+                console.log("sec")
+                qtdPart = 1
+            }else{
+                console.log("tri")
+                qtdPart = 1
+            }
+            console.log(qtdPart)
+            console.log(req.body.tipoMidia)
+            if(req.body.tipoMidia === 'imagem'){
+                req.imageName = idConcurso+'0690'+qtdPart+'.jpg'
+            }else{
+                req.imageName = idConcurso+'0690'+qtdPart+'.mp4'
+            }
+            cb(null, req.imageName)
+        }else{
+            cb(null, null)
+        }   
+    },
+        
+})
+
+const storageA = multer.diskStorage({
+    destination: (req, file, cb) => {
+    cb(null, "public/uploads/")
+    console.log("destination")
+    },
+    filename: async (req, file, cb) => {
+        console.log("filename")
+    var qtdConq = await db.Concurso.count()
+    console.log(qtdConq)
+    if(qtdConq >= 1){
         console.log("prima")
-        qtdPart = qtdPart + 1;
-    }else if(qtdPart < 1){
+        qtdConq = qtdConq + 1;
+    }else if(qtdConq < 1){
         console.log("sec")
-        qtdPart = 1
+        qtdConq = 1
     }else{
         console.log("tri")
-        qtdPart = 1
+        qtdConq = 1
     }
-    console.log(qtdPart)
-    console.log(req.body.tipoMidia)
-    if(req.body.tipoMidia === 'imagem'){
-         req.imageName = idConcurso+'0690'+qtdPart+'.jpg'
-    }else{
-         req.imageName = idConcurso+'0690'+qtdPart+'.mp4'
-    }
+
+    req.imageName = qtdConq+'0690.jpg'
     cb(null, req.imageName)
     },
-})
-const upload = multer({storage})
+    })
 
-//route.post("/paritcipacaoEdit",upload.single('imagem'),controllerParticipacao.postEdit);
-
+const uploadB = multer({storage: storageB})
+const uploadA = multer({storage: storageA})
 
 
 //Controller Usuario
@@ -69,7 +99,7 @@ const upload = multer({storage})
 //Controller concurso
     //concurso - CRUD
     route.get("/concursoCreate",controllerConcurso.getCreate);
-    route.post("/concursoCreate",controllerConcurso.postCreate);
+    route.post("/concursoCreate",uploadA.single('imagemCapa'),controllerConcurso.postCreate);
     route.get("/concursoList",controllerConcurso.getList);
 
 //Controller Usuario Padrão (UP)
@@ -78,7 +108,8 @@ const upload = multer({storage})
 //Controller participacao
     //participacao - CRUD
     route.get("/participacaoCreate",controllerParticipacao.getCreate);
-    route.post("/participacaoCreate",upload.single('imagem'),controllerParticipacao.postCreate);
+    route.post("/participacaoCreate",uploadB.single('imagem'),controllerParticipacao.postCreate);
+    //route.post("/paritcipacaoEdit",upload.single('imagem'),controllerParticipacao.postEdit);
     route.get("/participacaoList",controllerParticipacao.getList);
     route.post("/participacaoList/votar",controllerParticipacao.postVotos);
 

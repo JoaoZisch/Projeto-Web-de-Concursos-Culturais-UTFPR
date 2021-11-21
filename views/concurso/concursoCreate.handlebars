@@ -1,5 +1,5 @@
 
-        <form action="/concursoCreate" method="post">  
+        <form action="/concursoCreate" method="post" enctype="multipart/form-data">  
             Nome:  <input type="text" name="nome">
             <br> <br>
             Descrição:  <input type="text" name="descricao">
@@ -12,7 +12,9 @@
             <select id="tipoMidia" name="tipoMidia">
                 <option value="imagem">Imagem</option>
                 <option value="videoAudio">Video ou Audio</option>
+                <option value="texto">Texto</option>
             </select>
+            Imagem de Capa: <input type="file" name="imagemCapa">
             <input type="submit" id="btnCadastroConcurso" value="Cadastrar" onclick=msg()>
             <p id="msgValidacao" style="color: red;" hidden > A data de encerramento deve ser maior que data maxima de participação! </p>
             <script>
