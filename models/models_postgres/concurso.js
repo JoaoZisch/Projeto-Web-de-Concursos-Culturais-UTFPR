@@ -15,6 +15,9 @@ module.exports = (sequelize, Sequelize) => {
         },     
         dtFimConcurso: {
             type: Sequelize.DATEONLY, allowNull: false
+        },
+        tipoMidia: {
+            type: Sequelize.STRING, allowNull: false
         }
     });
     return Concurso;

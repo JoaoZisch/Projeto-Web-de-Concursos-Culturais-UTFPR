@@ -13,7 +13,8 @@ module.exports = {
             nome:req.body.nome,
             descricao:req.body.descricao,
             dtMaxPart: req.body.dtMaxPart,
-            dtFimConcurso: req.body.dtFimConcurso
+            dtFimConcurso: req.body.dtFimConcurso,
+            tipoMidia: req.body.tipoMidia 
             });
         res.redirect('/home');
     },
@@ -36,11 +37,15 @@ module.exports = {
         try {
         const nome = req.params.nome
         const concursoSelecionado = await db.Concurso.findOne( {raw: true, where:{nome: nome}})
-
+        
         const participacoesConcurso = await db.Participacao.findAll( {raw: true, where:{concursoId: concursoSelecionado.id}})
-
+        
+        if(concursoSelecionado.tipoMidia == 'imagem')
             res.render('concurso/infoConcurso', {layout: 'infoConcursosMenu.handlebars', concursoSelecionado, participacoesConcurso}) 
-            
+        else{
+            res.render('concurso/infoConcursoVideo', {layout: 'infoConcursosMenu.handlebars', concursoSelecionado, participacoesConcurso}) 
+        }   
+
         } catch (error) {
             console.log(error)
         }

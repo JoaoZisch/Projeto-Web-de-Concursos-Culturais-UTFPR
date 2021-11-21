@@ -39,7 +39,12 @@ const storage = multer.diskStorage({
         qtdPart = 1
     }
     console.log(qtdPart)
-    req.imageName = idConcurso+'0690'+qtdPart+'.jpg'
+    console.log(req.body.tipoMidia)
+    if(req.body.tipoMidia === 'imagem'){
+         req.imageName = idConcurso+'0690'+qtdPart+'.jpg'
+    }else{
+         req.imageName = idConcurso+'0690'+qtdPart+'.mp4'
+    }
     cb(null, req.imageName)
     },
 })
