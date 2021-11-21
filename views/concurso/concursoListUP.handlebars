@@ -6,14 +6,14 @@
       <img src="https://source.unsplash.com/600x400/?computer" alt="card__image" class="card__image" width="600">
     </div>
     <div class="card__body">
-      
       <h4>{{nome}}</h4>
-      <p>{{descricao}}</p>
-      <form action="/infoConcurso/{{nome}}" method="get">  
-            <button class="button" style="vertical-align:middle" type="submit" value="Visualisar" ><span>Visualisar </span></button>
-      </form>
+      <div class="card_text"><p>{{descricao}}</p></div>
     </div>
-    <div class="card__footer"></div>
+    <div class="card__footer">
+        <form action="/infoConcurso/{{nome}}" method="get">  
+            <button class="button" style="vertical-align:middle" type="submit" value="Visualisar" ><span>Visualisar </span></button>
+        </form>
+    </div>
   </div>
 {{/each}}
 </div>

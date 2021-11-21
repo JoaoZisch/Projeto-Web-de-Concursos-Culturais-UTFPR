@@ -1,21 +1,21 @@
 
 <div class="container">
+<table border="1px" id="customers">
+    <tr>
+        <td> Login </td>
+        <td> Senha</td>
+        <td> Pergunta Secreta</td>
+        <td> Resposta Secreta</td>
+        <td>Administrador</td>
+    </tr>
 {{#each usuarios}}
-  <div class="card">
-    <div class="card__header">
-      <img src="https://source.unsplash.com/600x400/?computer" alt="card__image" class="card__image" width="600">
-    </div>
-    <div class="card__body">
-      
-      <h4>Login: {{login}}</h4>
-      <p>Senha: {{senha}}</p>
-        <br>
-      <h4>{{pergunta_secreta}}?</h4>
-      <p>{{resposta_pergunta}}</p>
-        <br>
-        <p>Pode isso adm?  {{flagadm}}</p>
-    </div>
-    <div class="card__footer"></div>
-  </div>
+    <tr>
+        <td>{{login}}</td>
+        <td>{{senha}}</td>
+        <td>{{pergunta_secreta}}</td>
+        <td>{{resposta_pergunta}}</td>
+        <td>{{flagadm}}</td>
+    </tr>
 {{/each}}
+</table>
 </div>

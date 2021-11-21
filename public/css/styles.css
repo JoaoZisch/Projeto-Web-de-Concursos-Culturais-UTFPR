@@ -8,6 +8,11 @@
   margin: 0;
 }
 
+p {
+  text-indent: 50px;
+  text-align: justify;
+  
+}
 h1 {
     font-family: "Quicksand", sans-serif;
     color:rgb(255, 255, 255)
@@ -47,7 +52,6 @@ nav li {
 body {
   font-family: "Quicksand", sans-serif;
   display: grid;
-  
   height: 100vh;
   background: #ffffff;
   background: linear-gradient(to right, #d2a679, #ac7339, #604020);
@@ -69,6 +73,8 @@ img {
 }
 
 .card {
+  text-indent: 50px;
+  text-align: justify;
   display: flex;
   flex-direction: column;
   width: clamp(20rem, calc(20rem + 2vw), 22rem);
@@ -84,6 +90,12 @@ img {
   display: flex;
   flex-direction: column;
   gap: .5rem;
+}
+
+.card_text{
+  display: flex;
+  text-indent: 50px;
+  text-align: justify;
 }
 
 .card__body h4 {
@@ -134,4 +146,27 @@ img {
   .button:hover span:after {
     opacity: 1;
     right: 0;
+  }
+
+  #customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #d6ccc2;}
+  
+  #customers tr:hover {background-color: #d2a679;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #604020;
+    color: #d2a679;
   }
