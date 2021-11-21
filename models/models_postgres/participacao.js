@@ -11,6 +11,9 @@ module.exports = (sequelize, Sequelize) => {
         },
         qtdVotos: {
             type: Sequelize.INTEGER, allowNull: true
+        },
+        imagem: {
+            type: Sequelize.STRING, required:false
         }
 
     });

@@ -21,13 +21,18 @@ module.exports = {
         const concurso = req.body.concurso
         const userLogado = await db.Usuario.findOne( {raw: true, where:{login: login}})
         const concursoSelecionado = await db.Concurso.findOne( {raw: true, where:{nome: concurso}})
+        //var qtdPart = await db.Participacao.count( {raw: true, where:{idConcurso: concursoSelecionado.id}})
+        //qtdPart + 1;
 
         try {
             db.Participacao.create({
                 usuarioId: userLogado.id,
                 concursoId: concursoSelecionado.id,
-                descricao:req.body.descricao,
-                qtdVotos: 0
+                descricao: req.body.descricao,
+                qtdVotos: 0,
+                imagem: req.imageName
+                //imagem: req.imageName+qtdPart+'.jpg'
+                
                 });
             res.redirect('/home')
         } catch (error) {

@@ -13,12 +13,14 @@ Votação ocorre até: <p> {{ concursoSelecionado.dtFimConcurso }}</p>
 
 <h2>Participar</h2>
 <br> <br>
-<form action="/participacaoCreate" method="post">
+<form action="/participacaoCreate" method="post" enctype="multipart/form-data">
+        <input type="text" name="id" value={{concursoSelecionado.id}} hidden>  
         <input type="text" name="concurso" value={{concursoSelecionado.nome}} hidden>  
-        <input type="text" id="data" name="concurso" value={{concursoSelecionado.dtMaxPart}} hidden >  
-        <input type="text" id="dataFinal" name="concurso" value={{concursoSelecionado.dtFimConcurso}} hidden >  
+        <input type="text" id="data" name="data" value={{concursoSelecionado.dtMaxPart}} hidden >  
+        <input type="text" id="dataFinal" name="dataFinal" value={{concursoSelecionado.dtFimConcurso}} hidden >  
         Descrição:  <input type="text" name="descricao">
         <br> <br> 
+        Imagem: <input type="file" name="imagem">
         <button class="button" style="vertical-align:middle" type="submit" id="btn" value="Participar" onclick=msg()><span>Participar </span></button>
         <script>
             function msg()
@@ -43,10 +45,9 @@ Votação ocorre até: <p> {{ concursoSelecionado.dtFimConcurso }}</p>
 {{#each participacoesConcurso}}
   <div class="card">
     <div class="card__header">
-      <img src="https://source.unsplash.com/600x400/?computer" alt="card__image" class="card__image" width="600">
+      <img src="../uploads/{{concursoId}}0690{{id}}.jpg" alt="card__image" class="card__image" width="600">
     </div>
     <div class="card__body">
-      
       <h4>Inscrição: {{id}}</h4>
       <p>{{descricao}}</p>
       <p>Numero de votos: {{qtdVotos}}</p>
