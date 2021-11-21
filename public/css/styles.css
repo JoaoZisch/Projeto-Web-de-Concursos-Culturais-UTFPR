@@ -31,7 +31,7 @@ nav {
     display: flex;
     position: fixed;
     background-color: rgb(59, 36, 25);
-    background: linear-gradient(to right, #604020, #604020, #331a00);
+    background: linear-gradient(to right, #ffffff, #8b4600, #000000);
     z-index: 99;
 }
 
