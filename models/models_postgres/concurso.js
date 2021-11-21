@@ -8,7 +8,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING, allowNull: false
         },
         descricao: {
-            type: Sequelize.STRING, allowNull: false
+            type: Sequelize.STRING(6969), allowNull: false
         },
         dtMaxPart : {
             type: Sequelize.DATEONLY, allowNull: false
@@ -18,6 +18,9 @@ module.exports = (sequelize, Sequelize) => {
         },
         tipoMidia: {
             type: Sequelize.STRING, allowNull: false
+        },
+        fotoCapa:{
+            type: Sequelize.STRING, allowNull: true
         }
     });
     return Concurso;

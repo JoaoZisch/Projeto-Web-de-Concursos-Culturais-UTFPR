@@ -9,12 +9,15 @@ module.exports = {
         res.render('concurso/concursoCreate');
     },
     async postCreate(req, res) {
+        console.log(req.imageName)
         db.Concurso.create({
             nome:req.body.nome,
             descricao:req.body.descricao,
             dtMaxPart: req.body.dtMaxPart,
             dtFimConcurso: req.body.dtFimConcurso,
-            tipoMidia: req.body.tipoMidia 
+            tipoMidia: req.body.tipoMidia,
+            fotoCapa: req.imageName
+
             });
         res.redirect('/home');
     },
@@ -42,9 +45,11 @@ module.exports = {
         
         if(concursoSelecionado.tipoMidia == 'imagem')
             res.render('concurso/infoConcurso', {layout: 'infoConcursosMenu.handlebars', concursoSelecionado, participacoesConcurso}) 
-        else{
+        else if(concursoSelecionado.tipoMidia == 'videoAudio'){
             res.render('concurso/infoConcursoVideo', {layout: 'infoConcursosMenu.handlebars', concursoSelecionado, participacoesConcurso}) 
-        }   
+        }else{
+            res.render('concurso/infoConcursoTexto', {layout: 'infoConcursosMenu.handlebars', concursoSelecionado, participacoesConcurso}) 
+        }
 
         } catch (error) {
             console.log(error)

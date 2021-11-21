@@ -10,7 +10,7 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.STRING, allowNull: true
         },
         texto: {
-            type: Sequelize.STRING, allowNull: true
+            type: Sequelize.STRING(6969), allowNull: true
         }
 
     });
