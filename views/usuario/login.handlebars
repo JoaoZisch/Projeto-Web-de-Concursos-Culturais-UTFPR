@@ -12,7 +12,7 @@
 
                                 <div class="col-sm-6">
                                     <label for="model" class="form-label">Login</label>
-                                    <input type="text" name="login" class="form-control">
+                                    <input type="text" name="login" id="login" class="form-control">
                                 </div>
 
                                 <div class="col-sm-6">
@@ -26,7 +26,7 @@
                         </div>
                     </form>
                     <br>
-                    <script> function recuperarSenha(){ window.location.href = "./usuario/recuperarSenha" + document.getElementById("login").value }</script>
+                    <script> function recuperarSenha(){ window.location.href = "recuperarSenha/" + document.getElementById("login").value }</script>
                     <button onclick=recuperarSenha()> Recupear Senha </button>
                 </div>
 
