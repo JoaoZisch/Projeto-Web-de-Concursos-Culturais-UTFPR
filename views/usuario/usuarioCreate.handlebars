@@ -1,29 +1,62 @@
-<!DOCTYPE html>
-<html>
-    <head>  </head>
-    <body>
-        <form action="/usuarioCreate" method="post">  
-            Login:  <input type="text" name="login">
-            <br> <br>
-            Senha:  <input type="password" name="senha">
-            <br> <br>
-            Pergunta Secreta:  <input type="text" name="pergunta">
-            <br> <br>
-            Resposta:  <input type="text" name="resposta">
-            <br> <br>
-            É administrador?    <input type="radio" name="flagadm" value=0 checked>
-                                <label for="huey">Não</label>
-                                 <input type="radio" name="flagadm" value=1>
-                                <label for="huey">Sim</label>
-            <br> <br>
-            <input type="submit" value="Cadastrar" onclick=msg()>
-            <script>
-                function msg()
-                {
-                alert("Usuário cadastrado com sucesso!");
-                }
-            </script>
-         </form>
-    
-    </body>
-</html>
+<div class="container py-4">
+    <div class="container">
+        <main>
+            <div class="py-5 text-center text-white">
+                <h2>Cadastrar Usuarios</h2>
+            </div>
+
+            <div class="row g-5">
+
+                <div class="col-md-12 col-lg-12">
+
+                    <form action="/usuarioCreate" method="post">
+                        <div class="row g-3">
+
+                            <div class="col-sm-12">
+                                <label for="model" class="form-label">Login</label>
+                                <input type="text" name="login" class="form-control">
+                            </div>
+
+                            <div class="col-sm-12">
+                                <label for="model" class="form-label">Senha</label>
+                                <input type="password" name="senha" class="form-control">
+                            </div>
+
+                            <div class="col-sm-12">
+                                <label for="model" class="form-label">Pergunta Secreta</label>
+                                <input type="text" name="pergunta" class="form-control">
+                            </div>
+
+                            <div class="col-sm-12">
+                                <label for="model" class="form-label">Resposta</label>
+                                <input type="text" name="resposta" class="form-control">
+                            </div>
+
+                            <div class="col-sm-12">
+                                <label for="model" class="form-label">Administrador?</label>
+                                <input class="form-label" type="radio" name="flagadm" value=0 checked>
+                                <label for="huey" class="form-label">Não</label>
+                                <input type="radio" name="flagadm" value=1 class="form-label">
+                                <label for="huey" class="form-label">Sim</label>
+                            </div>
+
+
+                            <center>
+                                <button class="w-50 btn btn-lg btn-dark" type="submit" onclick=msg()>Cadastrar</button>
+                            </center>
+
+                            <script>
+                                function msg() {
+                                    alert("Usuário cadastrado com sucesso!");
+                                }
+                            </script>
+
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </main>
+    </div>
+</div>

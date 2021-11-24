@@ -1,49 +1,61 @@
+<div class="container py-4">
+  <div class="container">
+    <main>
+      <div class="py-5 text-center text-white">
+        <h2>{{ concursoSelecionado.nome }}</h2>
+        <p>Incrições até: {{ concursoSelecionado.dtMaxPart }}</p>
+        <p>Votação ocorrem até: {{ concursoSelecionado.dtFimConcurso }}</p>
+      </div>
 
-<h1>{{ concursoSelecionado.nome }}</h1>
-<br> <br> 
+      <div class="row g-5">
+        <h2>Participar</h2>
+
+        <div class="col-md-12 col-lg-12">
+
+          <form action="/participacaoCreate" method="post" enctype="multipart/form-data">
+            <input type="text" name="id" value={{concursoSelecionado.id}} hidden>
+            <input type="text" name="concurso" value={{concursoSelecionado.nome}} hidden>
+            <input type="text" id="data" name="data" value={{concursoSelecionado.dtMaxPart}} hidden>
+            <input type="text" id="dataFinal" name="dataFinal" value={{concursoSelecionado.dtFimConcurso}} hidden>
+            <input type="text" id="tipoMidia" name="tipoMidia" value={{concursoSelecionado.tipoMidia}} hidden>
+            <div class="row g-3">
+
+              <div class="col-sm-12">
+                <label for="model" class="form-label">Descrição</label>
+                <input type="text" name="descricao" class="form-control">
+              </div>
+
+              <div class="col-sm-6">
+                <label for="model" class="form-label">Imagem</label>
+                <input type="file" class="form-control" name="imagem">
+              </div>
+
+              <center>
+                <br><button id="btnCadastroConcurso" class="w-50 btn btn-lg btn-dark" type="submit"
+                  onclick=msg()>Cadastrar</button>
+              </center>
+              <script>
+                function msg() {
+                  alert("Participação Efetuada!")
+                }
+              </script>
 
 
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </main>
+  </div>
+</div>
 
 
-
-
-Incrições até: <p> {{ concursoSelecionado.dtMaxPart }}</p>
-Votação ocorre até: <p> {{ concursoSelecionado.dtFimConcurso }}</p>
-<br> <br> 
-
-<h2>Participar</h2>
-<br> <br>
-<form action="/participacaoCreate" method="post" enctype="multipart/form-data">
-        <input type="text" name="id" value={{concursoSelecionado.id}} hidden>  
-        <input type="text" name="concurso" value={{concursoSelecionado.nome}} hidden>  
-        <input type="text" id="data" name="data" value={{concursoSelecionado.dtMaxPart}} hidden >  
-        <input type="text" id="dataFinal" name="dataFinal" value={{concursoSelecionado.dtFimConcurso}} hidden >  
-        <input type="text" id="tipoMidia" name="tipoMidia" value={{concursoSelecionado.tipoMidia}} hidden >
-        Descrição:  <input type="text" name="descricao">
-        <br> <br> 
-        Imagem: <input type="file" name="imagem">
-        <button class="button" style="vertical-align:middle" type="submit" id="btn" value="Participar" onclick=msg()><span>Participar </span></button>
-        <script>
-            function msg()
-            {
-              alert("Participação Efetuada!")
-            }
-        </script>
-
-</form>
-
-
-
-
-
-
-
-<br> <br>
-    <h1>Participações</h1>
-<br> <br>
-
+<div class="py-5 text-center text-white">
+  <h2>Votação</h2>
+</div>
 <div class="container2">
-{{#each participacoesConcurso}}
+  {{#each participacoesConcurso}}
   <div class="card">
     <div class="card__header">
       <img src="../uploads/{{concursoId}}0690{{id}}.jpg" alt="card__image" class="card__image" width="600">
@@ -52,18 +64,19 @@ Votação ocorre até: <p> {{ concursoSelecionado.dtFimConcurso }}</p>
       <h4>Inscrição: {{id}}</h4>
       <p>{{descricao}}</p>
       <p>Numero de votos: {{qtdVotos}}</p>
-      <form action="/participacaoList/votar" method="post">  
-            <input hidden type="integer" name="id" value={{id}}>
-            <button class="button" style="vertical-align:middle" type="submit" name="btnVoto" value="Votar" onclick=msg()><span>Votar </span></button>
-            <script>
-            function msg()
-            {
-              alert("Voto computado! Obrigado pela participação")
-            }
-            </script>
-    </form>
+      <form action="/participacaoList/votar" method="post">
+        <input hidden type="integer" name="id" value={{id}}>
+        <button class="button" style="vertical-align:middle" type="submit" name="btnVoto" value="Votar"
+          onclick=msg()><span>Votar </span></button>
+          
+        <script>
+          function msg() {
+            alert("Voto computado! Obrigado pela participação")
+          }
+        </script>
+      </form>
     </div>
     <div class="card__footer"></div>
   </div>
-{{/each}}
+  {{/each}}
 </div>

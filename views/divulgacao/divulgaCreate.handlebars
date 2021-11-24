@@ -1,22 +1,44 @@
 
+<div class="container py-4">
+  <div class="container">
+    <main>
+      <div class="py-5 text-center text-white">
+        <h2>Criação de Noticias para Divulgação</h2>
+      </div>
 
-<h1> Pagina de Criação de Posts para Divulgação dos Concursos</h1>
+      <div class="row g-5">
+
+        <div class="col-md-12 col-lg-12">
+
+          <form action="/divulgaCreate" method="post">
+            <div class="row g-3">
+
+              <div class="col-sm-12">
+                <label for="model" class="form-label">Titulo</label>
+                <input type="text" name="titulo" class="form-control">
+              </div>
+
+              <div class="col-sm-12">
+                <label for="model" class="form-label">Conteudo</label>
+                <input type="text" name="texto" class="form-control">
+              </div>
+
+              <center>
+                <button class="w-50 btn btn-lg btn-dark" type="submit" value="Publicar" onclick=msg()>Postar</button>
+              </center>
+
+              <script>
+                function msg() {
+                  alert("Participação Efetuada!")
+                }
+              </script>
 
 
-        <form action="/divulgaCreate" method="post">
-             <br> <br>
-            <p> Titulo: </p>    
-            <input type="text" name="titulo">
-            <br> <br>
-            <p>Conteudo: </p>  
-            <textarea type="textarea" rows="5" cols="33" name="texto"> </textarea>
-            <br> <br> 
-            <input type="submit" value="Publicar" onclick=msg()>
-        <script>
-            function msg()
-            {
-              alert("Participação Efetuada!")
-            }
-        </script>
-         </form>
+            </div>
+          </form>
+        </div>
 
+      </div>
+    </main>
+  </div>
+</div>
