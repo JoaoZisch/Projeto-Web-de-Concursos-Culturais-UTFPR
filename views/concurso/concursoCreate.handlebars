@@ -1,26 +1,72 @@
+<div class="container py-4">
+    <div class="container">
+        <main>
+            <div class="py-5 text-center text-white">
+                <h2>Cadastrar Concursos</h2>
+            </div>
 
-        <form action="/concursoCreate" method="post" enctype="multipart/form-data">  
-            Nome:  <input type="text" name="nome">
-            <br> <br>
-            Descrição:  <input type="text" name="descricao">
-            <br> <br> 
-            Data maxima para novas participações :  <input type="date" id="dtMaxPart" name="dtMaxPart">
-            <br> <br> 
-            Data de encerramento do concurso  <input type="date" id="dtFimConcurso" name="dtFimConcurso">
-            <br> <br> 
-            <label for="tipoMidia">Tipo de midia que deve ser enviado pelo participante:</label>
-            <select id="tipoMidia" name="tipoMidia">
-                <option value="imagem">Imagem</option>
-                <option value="videoAudio">Video ou Audio</option>
-                <option value="texto">Texto</option>
-            </select>
-            Imagem de Capa: <input type="file" name="imagemCapa">
-            <input type="submit" id="btnCadastroConcurso" value="Cadastrar" onclick=msg()>
-            <p id="msgValidacao" style="color: red;" hidden > A data de encerramento deve ser maior que data maxima de participação! </p>
-            <script>
-                function msg()
-                {
-                alert("Concurso cadastrado com sucesso!");
-                }
-            </script>
-         </form>
+            <div class="row g-5">
+
+                <div class="col-md-12 col-lg-12">
+
+                    <form action="/concursoCreate" method="post" enctype="multipart/form-data">
+                        <div class="row g-3">
+
+                            <div class="col-sm-12">
+                                <label for="model" class="form-label">Nome</label>
+                                <input type="text" name="nome" class="form-control">
+                            </div>
+
+                            <div class="col-sm-12">
+                                <label for="model" class="form-label">Descrição</label>
+                                <input type="text" name="descricao" class="form-control">
+                            </div>
+
+
+                            <div class="col-sm-6">
+                                <label for="model" class="form-label">Data maxima para novas participações</label>
+                                <input type="date" class="form-control" id="dtMaxPart" name="dtMaxPart">
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label for="model" class="form-label">Data de encerramento do concurso</label>
+                                <input type="date" class="form-control" id="dtFimConcurso" name="dtFimConcurso">
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label for="tipoMidia" class="form-label">Tipo de midia que deve ser enviado pelo
+                                    participante:</label>
+                                <select id="tipoMidia" name="tipoMidia" class="form-control">
+                                    <option value="imagem">Imagem</option>
+                                    <option value="videoAudio">Video ou Audio</option>
+                                    <option value="texto">Texto</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="model" class="form-label">Imagem de Capa</label>
+                                <input type="file" class="form-control" name="imagemCapa">
+                            </div>
+
+                            <center>
+                                <button id="btnCadastroConcurso" class="w-50 btn btn-lg btn-dark" type="submit"
+                                    onclick=msg()>Cadastrar</button>
+                            </center>
+
+
+                            <p id="msgValidacao" style="color: red;" hidden> A data de encerramento deve ser maior que
+                                data maxima de participação! </p>
+                            <script>
+                                function msg() {
+                                    alert("Concurso cadastrado com sucesso!");
+                                }
+                            </script>
+
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </main>
+    </div>
+</div>
