@@ -3,7 +3,12 @@
     <head>
         <title>Concursos da Firma</title>
         <link rel="stylesheet" href="/css/styles.css">
-        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+    
         <script>
             this.onpointermove = function disablePorValidacao(){
                         var htmlItem = document.getElementById("btnCadastroConcurso");
@@ -41,20 +46,29 @@
         </script>
     </head>
     <body>
-        <nav>
-            <a href="divulgaPage">ClóvisBasílio<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(249, 249, 249, 1);transform: scaleX(-1);msFilter:progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);"><path d="m20 18-4-5h3l-4-5h2l-5-6-5 6h2l-4 5h3l-4 5h7v4h2v-4z"></path></svg></a>
-            <a href="divulgaCreate">Criar Posts</a>
-            <a href="usuarioCreate">Cadastrar Usuários</a>
-            <a href="usuarioList">Listar Usuários</a>
-            <a href="concursoCreate">Cadastrar Concursos</a>
-            <a href="concursoList">Listar Concursos</a>
-            <a href="logout"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(249, 249, 249, 1);transform: ;msFilter:;"><path d="M16 13v-2H7V8l-5 4 5 4v-3z"></path><path d="M20 3h-9c-1.103 0-2 .897-2 2v4h2V5h9v14h-9v-4H9v4c0 1.103.897 2 2 2h9c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2z"></path></svg></a>
+<div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom text-dark">
+      <ul class="nav nav-pills">
+            <li class="nav-item"><a href="home" class="nav-link px-2 link-secondary" aria-current="page">Clóvis</a></li>
+            <li class="nav-item"><a href="divulgaPage" class="nav-link px-2 link-dark">Noticias</a></li>
+            <li class="nav-item"><a href="divulgaCreate" class="nav-link px-2 link-dark">Criar Posts</a></li>
+            <li class="nav-item"><a href="usuarioCreate" class="nav-link px-2 link-dark">Cadastrar Usuários</a></li>
+            <li class="nav-item"><a href="usuarioList" class="nav-link px-2 link-dark">Listar Usuários</a></li>
+            <li class="nav-item"><a href="concursoCreate" class="nav-link px-2 link-dark">Cadastrar Concursos</a></li>
+            <li class="nav-item"><a href="concursoList" class="nav-link px-2 link-dark">Listar Concursos</a></li>
+            <li class="nav-item"><a href="logout" class="nav-link px-2 link-dark"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(249, 249, 249, 1);transform: ;msFilter:;"><path d="M16 13v-2H7V8l-5 4 5 4v-3z"></path><path d="M20 3h-9c-1.103 0-2 .897-2 2v4h2V5h9v14h-9v-4H9v4c0 1.103.897 2 2 2h9c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2z"></path></svg></a></li>
             
-        </nav>
-
-        <center> 
-            <br><br><br><br><br>
+      </ul>
+    </header>
+  </div>
+        <center>
             {{{body}}}
         </center>
+
+<footer class="text-muted py-5">
+    <div class="container">
+      <p class="mb-1">© Powered by Clóvis</p>
+    </div>
+</footer>
     </body>
 </html>
