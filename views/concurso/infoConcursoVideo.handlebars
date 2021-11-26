@@ -2,9 +2,10 @@
   <div class="container">
     <main>
       <div class="py-5 text-center text-white">
-        <h2>{{ concursoSelecionado.nome }}</h2>
-        <p>Incrições até: {{ concursoSelecionado.dtMaxPart }}</p>
-        <p>Votação ocorrem até: {{ concursoSelecionado.dtFimConcurso }}</p>
+        <h1>{{ concursoSelecionado.nome }}</h1>
+        <h2>Incrições até: {{ concursoSelecionado.dtMaxPart }}</h2>
+        <h2>Votações até: {{ concursoSelecionado.dtFimConcurso }}</h2>
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom text-dark"></header>
       </div>
 
       <div class="row g-5">
@@ -52,6 +53,7 @@
 
 
 <div class="py-5 text-center text-white">
+  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom text-dark"></header>
   <h2>Votação</h2>
 </div>
 <div class="container2">
@@ -64,7 +66,7 @@
     <div class="card__body">
       <h4>Inscrição: {{id}}</h4>
       <p>{{descricao}}</p>
-      <p>Numero de votos: {{qtdVotos}}</p>
+      <h2>Votos: {{qtdVotos}}</h2>
       <form action="/participacaoList/votar" method="post">
         <input hidden type="integer" name="id" value={{id}}>
         <button class="button" style="vertical-align:middle" type="submit" name="btnVoto" value="Votar"

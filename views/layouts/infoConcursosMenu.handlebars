@@ -1,73 +1,77 @@
 <!DOCTYPE html>
-<html>  
-    <head>
-        <title>Informações do Concurso</title>
-        <link rel="stylesheet" href="/css/styles.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-        <script type='text/javascript'>
-			    this.onload = function disablePorData(){
+<html>
 
-                var htmlItem = document.getElementById("btn")
-                var dtfim = document.getElementById("data").value
+<head>
+    <title>Informações do Concurso</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script type='text/javascript'>
+        this.onload = function disablePorData() {
 
-                var dtfim = String(dtfim.slice(0,10)); 
-                var dd = String(dtfim.slice(8,10));
-                var mm = String(dtfim.slice(5,7));
-                var yyyy = String(dtfim.slice(0,4));
-                console.log(yyyy, mm, dd)
+            var htmlItem = document.getElementById("btn")
+            var dtfim = document.getElementById("data").value
 
-                dtfim = new Date(yyyy,mm-1,dd);
-                console.log(dtfim)
+            var dtfim = String(dtfim.slice(0, 10));
+            var dd = String(dtfim.slice(8, 10));
+            var mm = String(dtfim.slice(5, 7));
+            var yyyy = String(dtfim.slice(0, 4));
+            console.log(yyyy, mm, dd)
 
-                var dtatual = new Date();
+            dtfim = new Date(yyyy, mm - 1, dd);
+            console.log(dtfim)
 
-                if(dtatual >= dtfim){
+            var dtatual = new Date();
+
+            if (dtatual >= dtfim) {
                 console.log("SIM")
-                htmlItem.disabled = true ;
-                }
-            
-        
+                htmlItem.disabled = true;
+            }
 
-                var htmlItem = document.getElementsByName("btnVoto")
-                var dtfim = document.getElementById("dataFinal").value
 
-                var dtfim = String(dtfim.slice(0,10)); 
-                var dd = String(dtfim.slice(8,10));
-                var mm = String(dtfim.slice(5,7));
-                var yyyy = String(dtfim.slice(0,4));
-                console.log(yyyy, mm, dd)
 
-                dtfim = new Date(yyyy,mm-1,dd);
-                console.log(dtfim)
+            var htmlItem = document.getElementsByName("btnVoto")
+            var dtfim = document.getElementById("dataFinal").value
 
-                var dtatual = new Date();
+            var dtfim = String(dtfim.slice(0, 10));
+            var dd = String(dtfim.slice(8, 10));
+            var mm = String(dtfim.slice(5, 7));
+            var yyyy = String(dtfim.slice(0, 4));
+            console.log(yyyy, mm, dd)
 
-                
-                if(dtatual >= dtfim){
-                    for(var i = 0; i < htmlItem.length; i++){
+            dtfim = new Date(yyyy, mm - 1, dd);
+            console.log(dtfim)
+
+            var dtatual = new Date();
+
+
+            if (dtatual >= dtfim) {
+                for (var i = 0; i < htmlItem.length; i++) {
                     console.log("SIM");
-                    htmlItem[i].disabled = true ;
-                    }
+                    htmlItem[i].disabled = true;
                 }
-            
-            };
-		</script>
-    </head>
-    <body>
+            }
+
+        };
+    </script>
+</head>
+
+<body>
+    <div class="container">
+
         <center>
-            <h1> </h1>
-            <br>
             {{{body}}}
         </center>
+
         <footer class="text-muted py-5">
-    <div class="container">
-      <p class="mb-1">© Powered by Clóvis</p>
+            <div class="container">
+                <p class="mb-1">© Powered by Clóvis</p>
+            </div>
+        </footer>
     </div>
-</footer>
-        
-    </body>
+</body>
+
 </html>
