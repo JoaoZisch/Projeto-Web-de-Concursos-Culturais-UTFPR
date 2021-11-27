@@ -14,6 +14,12 @@ module.exports = (sequelize, Sequelize) => {
         },
         imagem: {
             type: Sequelize.STRING, required:false
+        },
+        nomeParticipante: {
+            type: Sequelize.STRING, required:false
+        },
+        celular: {
+            type: Sequelize.INTEGER, required:false
         }
 
     });

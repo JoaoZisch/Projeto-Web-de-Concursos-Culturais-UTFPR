@@ -57,6 +57,33 @@
 
         };
     </script>
+    <script>
+            this.onload = function defineWinner() {
+          
+            var htmlItem = document.getElementById("btnCampeao")
+            var dtfim = document.getElementById("dataFinal").value
+
+            htmlItem.disabled = true; 
+            htmlItem.hidden = true
+
+            var dtfim = String(dtfim.slice(0, 10));
+            var dd = String(dtfim.slice(8, 10));
+            var mm = String(dtfim.slice(5, 7));
+            var yyyy = String(dtfim.slice(0, 4));
+            console.log(yyyy, mm, dd)
+
+            dtfim = new Date(yyyy, mm - 1, dd);
+            console.log(dtfim)
+            console.log
+            var dtatual = new Date();
+               
+                if(dtatual >= dtfim){
+                  htmlItem.disabled = false;      
+                  htmlItem.hidden = false;
+                }
+            }
+
+    </script>
 </head>
 
 <body>

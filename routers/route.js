@@ -112,6 +112,7 @@ const uploadA = multer({storage: storageA})
     //route.post("/paritcipacaoEdit",upload.single('imagem'),controllerParticipacao.postEdit);
     route.get("/participacaoList",controllerParticipacao.getList);
     route.post("/participacaoList/votar",controllerParticipacao.postVotos);
+    route.post("/participacaoList/publicarCampeao",controllerParticipacao.publicarCampeao);
 
     //InfoConcurso :D
     route.get("/infoConcurso/:nome",controllerConcurso.getInfoPage);
