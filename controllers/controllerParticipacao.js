@@ -28,7 +28,9 @@ module.exports = {
                 concursoId: concursoSelecionado.id,
                 descricao: req.body.descricao,
                 qtdVotos: 0,
-                imagem: req.imageName
+                imagem: req.imageName,
+                nomeParticipante: req.body.nomeParticipante,
+                celular: req.body.celular
                 
                 });
             res.redirect('/home')
@@ -51,6 +53,17 @@ module.exports = {
             { where: { id: participacaoSelecionada.id} }
           )
           res.redirect('/home')
+    },
+
+    async publicarCampeao(req,res){
+        db.Divulgacao.create({
+            titulo:'Campeão do concurso '+req.body.nomeConcurso,
+            texto:req.body.nomeParticipante+' sangrou-se vencedor(a) do concurso '+ req.body.nomeConcurso +'. A Madeireira Clóvis Basilio aprecia a dura dedicação do participante! Parabéns! :D',
+            imagem: req.body.imagemCapa
+            });
+        res.redirect('/home')
+
     }
+
 
 }   

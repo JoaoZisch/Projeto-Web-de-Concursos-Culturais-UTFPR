@@ -41,7 +41,7 @@ module.exports = {
         const nome = req.params.nome
         const concursoSelecionado = await db.Concurso.findOne( {raw: true, where:{nome: nome}})
         
-        const participacoesConcurso = await db.Participacao.findAll( {raw: true, where:{concursoId: concursoSelecionado.id},order: [['qtdVotos', 'DESC']]})
+        const participacoesConcurso = await db.Participacao.findAll( {raw: true, where:{concursoId: concursoSelecionado.id},order: [['qtdVotos', 'DESC'], ['id', 'ASC']]})
         
         if(concursoSelecionado.tipoMidia == 'imagem')
             res.render('concurso/infoConcurso', {layout: 'infoConcursosMenu.handlebars', concursoSelecionado, participacoesConcurso}) 
