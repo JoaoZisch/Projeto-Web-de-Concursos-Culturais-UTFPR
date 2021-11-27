@@ -40,15 +40,17 @@ module.exports = {
         try {
         const nome = req.params.nome
         const concursoSelecionado = await db.Concurso.findOne( {raw: true, where:{nome: nome}})
+        const login = req.session.login
+        const userLogado = await db.Usuario.findOne( {raw: true, where:{login: login}})
         
         const participacoesConcurso = await db.Participacao.findAll( {raw: true, where:{concursoId: concursoSelecionado.id},order: [['qtdVotos', 'DESC'], ['id', 'ASC']]})
         
         if(concursoSelecionado.tipoMidia == 'imagem')
-            res.render('concurso/infoConcurso', {layout: 'infoConcursosMenu.handlebars', concursoSelecionado, participacoesConcurso}) 
+            res.render('concurso/infoConcurso', {layout: 'infoConcursosMenu.handlebars', concursoSelecionado, participacoesConcurso, userLogado}) 
         else if(concursoSelecionado.tipoMidia == 'videoAudio'){
-            res.render('concurso/infoConcursoVideo', {layout: 'infoConcursosMenu.handlebars', concursoSelecionado, participacoesConcurso}) 
+            res.render('concurso/infoConcursoVideo', {layout: 'infoConcursosMenu.handlebars', concursoSelecionado, participacoesConcurso, userLogado}) 
         }else{
-            res.render('concurso/infoConcursoTexto', {layout: 'infoConcursosMenu.handlebars', concursoSelecionado, participacoesConcurso}) 
+            res.render('concurso/infoConcursoTexto', {layout: 'infoConcursosMenu.handlebars', concursoSelecionado, participacoesConcurso, userLogado}) 
         }
 
         } catch (error) {

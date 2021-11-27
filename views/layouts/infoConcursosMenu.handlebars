@@ -12,8 +12,9 @@
     <script type='text/javascript'>
         this.onload = function disablePorData() {
 
-            var htmlItem = document.getElementById("btn")
+            var htmlItem = document.getElementById("btnCadastroConcurso")
             var dtfim = document.getElementById("data").value
+             var msgVal = document.getElementById("msgValidacao")
 
             var dtfim = String(dtfim.slice(0, 10));
             var dd = String(dtfim.slice(8, 10));
@@ -29,6 +30,8 @@
             if (dtatual >= dtfim) {
                 console.log("SIM")
                 htmlItem.disabled = true;
+                htmlItem.hidden = true;
+                msgVal.hidden = false
             }
 
 
@@ -52,17 +55,19 @@
                 for (var i = 0; i < htmlItem.length; i++) {
                     console.log("SIM");
                     htmlItem[i].disabled = true;
+                    htmlItem[i].hidden = true;
                 }
             }
 
         };
     </script>
     <script>
-            this.onload = function defineWinner() {
+            this.onmousemove = function defineWinner() {
           
             var htmlItem = document.getElementById("btnCampeao")
             var dtfim = document.getElementById("dataFinal").value
-
+            var flagAdm = document.getElementById("flag").value
+            
             htmlItem.disabled = true; 
             htmlItem.hidden = true
 
@@ -77,12 +82,12 @@
             console.log
             var dtatual = new Date();
                
-                if(dtatual >= dtfim){
+                if(dtatual >= dtfim && flagAdm == 1){
                   htmlItem.disabled = false;      
                   htmlItem.hidden = false;
                 }
             }
-
+        
     </script>
 </head>
 

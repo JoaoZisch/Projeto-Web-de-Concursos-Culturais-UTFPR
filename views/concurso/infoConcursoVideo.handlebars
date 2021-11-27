@@ -47,6 +47,8 @@
               <center>
                 <br><button id="btnCadastroConcurso" class="w-50 btn btn-lg btn-dark" type="submit"
                   onclick=msg()>Cadastrar</button>
+                                 <p id="msgValidacao" style="color:rgba(0, 0, 0, 1)" hidden> A data maxima para novas participações foi expirada! Abriremos outros concursos no futuro, fica rlx!  </p>
+
               </center>
               <script>
                 function msg() {
@@ -65,6 +67,7 @@
 </div>
 
         <form action="/participacaoList/publicarCampeao" method="post"> 
+            <input hidden type="number" name="flag" id="flag" value={{userLogado.flagadm}} >
             <input hidden type="text" name="id" value={{participacoesConcurso.[0].id}} >
             <input hidden type="text" name="descricao" value={{participacoesConcurso.[0].descricao}} >
             <input hidden type="text" id="qtdVotos" name="qtdVotos" value={{participacoesConcurso.[0].qtdVotos}} >
