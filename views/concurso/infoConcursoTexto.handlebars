@@ -1,11 +1,15 @@
 <div class="container py-4">
   <div class="container">
     <main>
-      <div class="py-5 text-center text-white">
-        <h2>{{ concursoSelecionado.nome }}</h2>
-        <p>Incrições até: {{ concursoSelecionado.dtMaxPart }}</p>
-        <p>Votação ocorrem até: {{ concursoSelecionado.dtFimConcurso }}</p>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4 fw-normal">{{ concursoSelecionado.nome }}</h1>
+          <h2>Inscrições até: {{ concursoSelecionado.dtMaxPart }}</h2>
+          <h2>Votações até: {{ concursoSelecionado.dtFimConcurso }}</h2>
+        </div>
       </div>
+
+      <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom text-dark"></header>
 
       <div class="row g-5">
         <h2>Participar</h2>
@@ -21,7 +25,7 @@
             <div class="row g-3">
 
               <div class="col-sm-12">
-                <label for="model" class="form-label">Descrição</label>
+                <label for="model" class="form-label fs-5">Descrição</label>
                 <input type="text" name="descricao" class="form-control">
               </div>
 
@@ -47,6 +51,7 @@
 
 
 <div class="py-5 text-center text-white">
+  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom text-dark"></header>
   <h2>Votação</h2>
 </div>
 <div class="container2">
@@ -57,7 +62,8 @@
     <div class="card__body">
       <h4>Inscrição: {{id}}</h4>
       <p>{{descricao}}</p>
-      <p>Numero de votos: {{qtdVotos}}</p>
+      <h2><svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12.781 2.375c-.381-.475-1.181-.475-1.562 0l-8 10A1.001 1.001 0 0 0 4 14h4v7a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-7h4a1.001 1.001 0 0 0 .781-1.625l-8-10zM15 12h-1v8h-4v-8H6.081L12 4.601 17.919 12H15z"></path></svg>Votos: {{qtdVotos}}</h2>
+      
       <form action="/participacaoList/votar" method="post">
         <input hidden type="integer" name="id" value={{id}}>
         <button class="button" style="vertical-align:middle" type="submit" name="btnVoto" value="Votar"

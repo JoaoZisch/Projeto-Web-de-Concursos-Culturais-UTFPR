@@ -9,25 +9,26 @@
                     <form action="/login" method="post">
                         <div class="row g-3">
                             <center>
-
+                                <br>
                                 <div class="col-sm-6">
-                                    <label for="model" class="form-label">Login</label>
+                                    <label for="model" class="form-label fs-5">Login</label>
                                     <input type="text" name="login" id="login" class="form-control">
                                 </div>
-
+                                <br>
                                 <div class="col-sm-6">
-                                    <label for="model" class="form-label">Senha</label>
+                                    <label for="model" class="form-label fs-5">Senha</label>
                                     <input type="password" name="senha" class="form-control">
                                 </div>
                                 <br>
-                                <button class="w-50 btn btn-lg btn-dark" type="submit">logar</button>
+                                <button class="w-40 btn btn-lg btn-dark" type="submit">logar</button>
 
                             </center>
                         </div>
                     </form>
                     <br>
                     <script> function recuperarSenha(){ window.location.href = "recuperarSenha/" + document.getElementById("login").value }</script>
-                    <button onclick=recuperarSenha()> Recupear Senha </button>
+                    <button class="w-40 btn btn-lg btn-white" onclick=recuperarSenha()> Recuperar Senha </button>
+    
                 </div>
 
             </div>
