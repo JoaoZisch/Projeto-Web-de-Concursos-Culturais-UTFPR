@@ -39,11 +39,13 @@ a:hover {
 
 body {
     background-image: url(/uploads/wildtextures-scrap-wooden-table-top.jpg);
-    background-repeat: no-repeat;
+    background-size: 100%;
+    background-repeat: repeat;
     background-position: right top;
     font-family: "Quicksand", sans-serif;
     display: grid;
     height: 100vh;
+    max-width: 100%;
 }
 
 .container {
@@ -204,18 +206,4 @@ img {
 
 .dropdown-toggle {
     outline: 0;
-}
-
-.position-relative {
-    border-radius: 21px;
-}
-
-.product-device {
-    position: absolute;
-    right: 10%;
-    bottom: -60%;
-    width: 300px;
-    height: 540px;
-    background-color: #333;
-    border-radius: 21px;
 }
