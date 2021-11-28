@@ -18,9 +18,10 @@ module.exports = {
     },
     async postCreate(req, res) {
         const login = req.session.login
-        const concurso = req.body.concurso
+        console.log(login);
+        const concurso = req.body.id
         const userLogado = await db.Usuario.findOne( {raw: true, where:{login: login}})
-        const concursoSelecionado = await db.Concurso.findOne( {raw: true, where:{nome: concurso}})
+        const concursoSelecionado = await db.Concurso.findOne( {raw: true, where:{id: concurso}})
 
         try {
             db.Participacao.create({
