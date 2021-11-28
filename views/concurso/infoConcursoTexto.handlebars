@@ -6,12 +6,16 @@
           <h1 class="display-4 fw-normal">{{ concursoSelecionado.nome }}</h1>
           <h2>Inscrições até: {{ concursoSelecionado.dtMaxPart }}</h2>
           <h2>Votações até: {{ concursoSelecionado.dtFimConcurso }}</h2>
+          <br>
+           <p style="text-align: center;">
+             {{concursoSelecionado.descricao}}
+          </p>
         </div>
       </div>
 
       <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom text-dark"></header>
 
-      <div class="row g-5">
+      <div class="row g-5" id="divParticipacao">
         <h2>Participar</h2>
 
         <div class="col-md-12 col-lg-12">
@@ -25,25 +29,24 @@
             <div class="row g-3">
 
               <div class="col-sm-12">
-                <label for="model" class="form-label fs-5">Texto</label>
-                <input type="text" name="descricao" class="form-control">
+                <label for="model" class="form-label fs-5">Conteúdo</label>
+                <textarea type="text" name="descricao"  rows="6" cols="69" class="form-control" ></textarea>
               </div>
-
+              <br>
               <div class="col-sm-12">
                 <label for="model" class="form-label fs-5">Nome do Participante:</label>
-                <input type="text" class="descricao" name="nomeParticipante">
+                <input type="text" class="form-control" name="nomeParticipante">
               </div>
 
               <div class="col-sm-12">
                 <label for="model" class="form-label fs-5">Celular do Participante</label>
-                <input type="number" class="descricao" name="celular">
+                <input type="number" class="form-control" name="celular">
               </div>
 
 
               <center>
                 <br><button id="btnCadastroConcurso" class="w-50 btn btn-lg btn-dark" type="submit"
-                  onclick=msg()>Cadastrar</button>
-                                 <p id="msgValidacao" style="color:rgba(0, 0, 0, 1)" hidden> A data maxima para novas participações foi expirada! Abriremos outros concursos no futuro, fica rlx!  </p>
+                  onclick=msg()>Cadastrar Participação</button>
 
               </center>
               <script>
@@ -58,6 +61,8 @@
         </div>
 
       </div>
+       <p id="msgValidacao" style="color:rgba(0, 0, 0, 1)" hidden> A data maxima para novas participações foi expirada! Abriremos outros concursos no futuro, fica rlx!  </p>
+
     </main>
   </div>
 </div>
@@ -70,7 +75,7 @@
             <input hidden type="text" id="nomeParticipante" name="nomeParticipante" value={{participacoesConcurso.[0].nomeParticipante}} >
             <input hidden type="text" id="celular" name="celular" value={{participacoesConcurso.[0].celular}} >
             <input hidden type="text" id="imagemCapa" name="imagemCapa" value={{concursoSelecionado.fotoCapa}} >
-            <input hidden type="text" id="nomeConcurso" name="nomeConcurso" value={{concursoSelecionado.nome}} >
+            <input hidden type="text" id="nomeConcurso" name="nomeConcurso" value="{{concursoSelecionado.nome}}" >
            <button class="button" style="vertical-align:middle" type="submit" name="btnCampeao" id="btnCampeao" value="btnCampeao"
           ><span>Publicar Campeão </span></button>
         </form>
@@ -88,6 +93,7 @@
     </div>
     <div class="card__body">
       <h4>Inscrição: {{id}}</h4>
+      <h4>Participante: {{nomeParticipante}}</h4>
       <p>{{descricao}}</p>
       <h2><svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12.781 2.375c-.381-.475-1.181-.475-1.562 0l-8 10A1.001 1.001 0 0 0 4 14h4v7a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-7h4a1.001 1.001 0 0 0 .781-1.625l-8-10zM15 12h-1v8h-4v-8H6.081L12 4.601 17.919 12H15z"></path></svg>Votos: {{qtdVotos}}</h2>
       

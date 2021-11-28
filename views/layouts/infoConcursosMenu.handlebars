@@ -14,7 +14,8 @@
 
             var htmlItem = document.getElementById("btnCadastroConcurso")
             var dtfim = document.getElementById("data").value
-             var msgVal = document.getElementById("msgValidacao")
+            var msgVal = document.getElementById("msgValidacao")
+            var divPart = document.getElementById("divParticipacao")
 
             var dtfim = String(dtfim.slice(0, 10));
             var dd = String(dtfim.slice(8, 10));
@@ -31,7 +32,8 @@
                 console.log("SIM")
                 htmlItem.disabled = true;
                 htmlItem.hidden = true;
-                msgVal.hidden = false
+                msgVal.hidden = false;
+                divPart.hidden = true;
             }
 
 
