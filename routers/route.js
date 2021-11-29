@@ -95,12 +95,14 @@ const uploadA = multer({storage: storageA})
     route.get("/usuarioCreate",controllerUsuario.getCreate);
     route.post("/usuarioCreate",controllerUsuario.postCreate);
     route.get("/usuarioList",controllerUsuario.getList);
+    route.get("/usuarioDelete/:id",controllerUsuario.getDelete);
 
 //Controller concurso
     //concurso - CRUD
     route.get("/concursoCreate",controllerConcurso.getCreate);
     route.post("/concursoCreate",uploadA.single('imagemCapa'),controllerConcurso.postCreate);
     route.get("/concursoList",controllerConcurso.getList);
+    route.post("/concursoList/excluir",controllerConcurso.postDelete);
 
 //Controller Usuario Padrão (UP)
     route.get("/concursoListUP",controllerConcurso.getListUP);
@@ -113,6 +115,7 @@ const uploadA = multer({storage: storageA})
     route.get("/participacaoList",controllerParticipacao.getList);
     route.post("/participacaoList/votar",controllerParticipacao.postVotos);
     route.post("/participacaoList/publicarCampeao",controllerParticipacao.publicarCampeao);
+    route.post("/participacaoList/excluir",controllerParticipacao.postDelete);
 
     //InfoConcurso :D
     route.get("/infoConcurso/:nome",controllerConcurso.getInfoPage);

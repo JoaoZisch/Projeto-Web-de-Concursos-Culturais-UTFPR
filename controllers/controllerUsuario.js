@@ -101,5 +101,15 @@ module.exports = {
         db.Usuario.findAll().then (usuarios => {
             res.render('usuario/usuarioList', {usuarios: usuarios.map(usuarios => usuarios.toJSON())});
         });
-    }
+    },
+
+    async getDelete(req, res) {
+        await db.Usuario.destroy({
+                where: {
+                    id: req.params.id
+             }
+         })
+             
+        res.redirect('/home');
+     }
 }   

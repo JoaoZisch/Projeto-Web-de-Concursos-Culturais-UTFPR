@@ -21,6 +21,9 @@ module.exports = (sequelize, Sequelize) => {
         },
         fotoCapa:{
             type: Sequelize.STRING, allowNull: true
+        },
+        flagativo: {
+            type: Sequelize.INTEGER, allowNull: true, defaultValue: 1
         }
     });
     return Concurso;

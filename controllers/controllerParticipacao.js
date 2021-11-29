@@ -64,7 +64,18 @@ module.exports = {
             });
         res.redirect('/home')
 
-    }
+    },
 
+    async postDelete(req, res) {
+
+        const participacaoSelecionada = await db.Participacao.findOne( {raw: true,  where: { id: req.body.id}})
+
+        db.Participacao.update(
+            { flagativo:'0' },
+            { where: { id: participacaoSelecionada.id} }
+          )
+          res.redirect('/home')
+         
+        }
 
 }   

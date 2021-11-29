@@ -45,6 +45,22 @@
 
 
     </script>
+            <script>
+        this.onload = function sumirBotao() {
+
+            var htmlExcluir = document.getElementsByName("btnExcluir")
+            var flagAdm = document.getElementById("flag").value
+
+            console.log(flagAdm)
+            if (flagAdm == 0) {
+                for (var i = 0; i < htmlExcluir.length; i++) {
+                    htmlExcluir[i].disabled = true;
+                    htmlExcluir[i].hidden = true;
+                }
+            }
+
+        };
+    </script>
 </head>
 
 <body>

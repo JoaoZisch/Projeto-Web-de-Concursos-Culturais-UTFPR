@@ -16,6 +16,8 @@
             var dtfim = document.getElementById("data").value
             var msgVal = document.getElementById("msgValidacao")
             var divPart = document.getElementById("divParticipacao")
+            var htmlExcluir = document.getElementsByName("btnExcluir")
+            var flagAdm = document.getElementById("flag").value
 
             var dtfim = String(dtfim.slice(0, 10));
             var dd = String(dtfim.slice(8, 10));
@@ -40,6 +42,7 @@
 
             var htmlItem = document.getElementsByName("btnVoto")
             var dtfim = document.getElementById("dataFinal").value
+          
 
             var dtfim = String(dtfim.slice(0, 10));
             var dd = String(dtfim.slice(8, 10));
@@ -61,6 +64,14 @@
                 }
             }
 
+            console.log(flagAdm)
+            if (flagAdm == 0) {
+                for (var i = 0; i < htmlExcluir.length; i++) {
+                    htmlExcluir[i].disabled = true;
+                    htmlExcluir[i].hidden = true;
+                }
+            }
+
         };
     </script>
     <script>
@@ -69,6 +80,8 @@
             var htmlItem = document.getElementById("btnCampeao")
             var dtfim = document.getElementById("dataFinal").value
             var flagAdm = document.getElementById("flag").value
+
+
             
             htmlItem.disabled = true; 
             htmlItem.hidden = true
@@ -81,14 +94,15 @@
 
             dtfim = new Date(yyyy, mm - 1, dd);
             console.log(dtfim)
-            console.log
+            
             var dtatual = new Date();
                
-                if(dtatual >= dtfim && flagAdm == 1){
+            if(dtatual >= dtfim && flagAdm == 1){
                   htmlItem.disabled = false;      
                   htmlItem.hidden = false;
                 }
             }
+
         
     </script>
 </head>
@@ -102,6 +116,7 @@
 
         <footer class="text-muted py-5">
             <div class="container">
+                <p class="mb-1">Em caso de empate no número de votos, o vencedor vai ser quem publicou primeiro sua participação.</p>
                 <p class="mb-1">© Powered by Clóvis</p>
             </div>
         </footer>

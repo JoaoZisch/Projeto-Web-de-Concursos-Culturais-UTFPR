@@ -2,7 +2,7 @@
 <div class="py-5 text-center text-white">
         <h2>Concursos</h2>
 </div>
-
+<input hidden type="number" name="flag" id="flag" value={{userLogado.flagadm}} >
 <div class="container2">
 {{#each concursos}}
   <div class="card">
@@ -18,6 +18,18 @@
             <button class="button" style="vertical-align:middle" type="submit" value="Visualisar" ><span>Visualizar </span></button>
         </form>
     </div>
+    <form action="/concursoList/excluir" method="post">
+        
+        <input hidden type="integer" name="id" value={{id}}>
+      <button class="button" style="vertical-align:middle" type="submit" name="btnExcluir" value="Excluir"
+          onclick=msg()><span>Inativar </span></button>
+          
+        <script>
+          function msg() {
+            alert("Concurso Inativado!")
+          }
+        </script>
+    </form>
   </div>
 {{/each}}
 </div>
