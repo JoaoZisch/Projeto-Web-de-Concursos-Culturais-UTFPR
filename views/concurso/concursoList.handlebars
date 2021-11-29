@@ -1,36 +1,37 @@
 <div class="py-5 text-center text-white">
-        <h2>Concursos</h2>
+  <h2>Concursos</h2>
 </div>
-<input hidden type="number" name="flag" id="flag" value={{userLogado.flagadm}} >
+<input hidden type="number" name="flag" id="flag" value={{userLogado.flagadm}}>
 <div class="container2">
-{{#each concursos}}
+  {{#each concursos}}
   <div class="card">
     <div class="card__header">
-       <img src="../uploads/{{id}}0690.jpg" alt="card__image" class="card__image" width="600">
+      <img src="../uploads/{{id}}0690.jpg" alt="card__image" class="card__image" width="600">
     </div>
     <div class="card__body">
       <h4>{{nome}}</h4>
       <p>{{descricao}}</p>
     </div>
     <div class="card__footer">
-      <form action="/infoConcurso/{{nome}}" method="get">  
-            <button class="button" style="vertical-align:middle" type="submit" value="Visualisar" ><span>Visualizar </span></button>
-      </form>
+      <form action="/infoConcurso/{{nome}}" method="get">
+        <button class="button" style="vertical-align:middle" type="submit" value="Visualisar"><span>Visualizar
+          </span></button>
+          
+      </form>
 
     </div>
     <form action="/concursoList/excluir" method="post">
-        
-        <input hidden type="integer" name="id" value={{id}}>
-      <button class="button" style="vertical-align:middle" type="submit" name="btnExcluir" value="Excluir"
-          onclick=msg()><span>Inativar </span></button>
-          
-        <script>
-          function msg() {
-            alert("Concurso inativada!")
-          }
-        </script>
+
+      <input hidden type="integer" name="id" value={{id}}>
+      <button class="button w-40 btn btn-lg btn-white" type="submit" name="btnExcluir" value="Excluir"
+        onclick=msg()><span>Inativar </span></button>
+        
+      <script>
+        function msg() {
+          alert("Concurso inativada!")
+        }
+      </script>
     </form>
   </div>
-{{/each}}
+  {{/each}}
 </div>
-
