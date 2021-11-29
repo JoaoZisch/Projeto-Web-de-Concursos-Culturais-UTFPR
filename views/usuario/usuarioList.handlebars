@@ -4,11 +4,12 @@
 <div class="container2">
 <table border="1px" id="customers">
     <tr>
-        <td> Login </td>
+        <td> Login</td>
         <td> Senha</td>
         <td> Pergunta Secreta</td>
         <td> Resposta Secreta</td>
-        <td>Administrador</td>
+        <td> Administrador</td>
+        <td> Deletar</td>
     </tr>
 {{#each usuarios}}
     <tr>
@@ -17,6 +18,7 @@
         <td>{{pergunta_secreta}}</td>
         <td>{{resposta_pergunta}}</td>
         <td>{{flagadm}}</td>
+        <td><a href="usuarioDelete/{{id}}"> Deletar </a></td>
     </tr>
 {{/each}}
 </table>

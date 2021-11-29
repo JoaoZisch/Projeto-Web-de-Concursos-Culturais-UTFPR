@@ -20,6 +20,9 @@ module.exports = (sequelize, Sequelize) => {
         },
         celular: {
             type: Sequelize.INTEGER, required:false
+        },
+        flagativo: {
+            type: Sequelize.INTEGER, allowNull: true, defaultValue: 1
         }
 
     });

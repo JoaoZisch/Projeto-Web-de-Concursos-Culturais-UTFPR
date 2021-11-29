@@ -116,6 +116,18 @@
           }
         </script>
       </form>
+      <form action="/participacaoList/excluir" method="post">
+        
+        <input hidden type="integer" name="id" value={{id}}>
+      <button class="button" style="vertical-align:middle" type="submit" name="btnExcluir" value="Excluir"
+          onclick=msg2()><span>Inativar </span></button>
+          
+        <script>
+          function msg2() {
+            alert("Participação Inativada!")
+          }
+        </script>
+      </form>
     </div>
     <div class="card__footer"></div>
   </div>
